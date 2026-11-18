@@ -1,0 +1,337 @@
+{
+  "performed_at": "2026-11-18T18:11:22.724Z",
+  "stage": "public",
+  "target": "https://p16157038-max.github.io/today-menu-hw5/",
+  "artifact_sha256": {
+    "index.html": "fe343fb892d4ffcc511689482f59443d0716913684be783a464f20e2329396e6",
+    "editorial.css": "9c477c9a68e404b12a8746f8ab3fe21a31c114b89778e33517fea053a81f7854",
+    "assets/restaurant-hero.jpg": "3113f3cde72a15787db809d071fe46f4cfbecb80adebec32368cb77b42e19ebd",
+    "assets/fonts/noto-serif-tc.ttf": "b95916dd800dbd8729241903e541c9e9a4f3a31d1b20e4d4c209b6b62caa69fa",
+    "assets/fonts/cormorant-garamond.ttf": "fc3858dfc491f19e921d2a8b073c458fb5afa36d9e3cd959255326184449c7c7",
+    "assets/dining-editorial.jpg": "63f03c96583e5aaaad7ebc291e46471d402ffb959acf3b95bea8ab56e9b2f3b9",
+    "assets/vegetarian-editorial.jpg": "a97cbad1c4a4c68cc0615f897082e4513a96674eb03fb458f379ea165d3479e0",
+    "assets/asian-editorial.jpg": "c793ce40978d91f59acb3b5f6dbcf7d018197abd1dd7743ca0c2a29e519cd3ff"
+  },
+  "summary": {
+    "total": 13,
+    "passed": 13,
+    "failed": 0
+  },
+  "cases": [
+    {
+      "name": "Default restaurant hero has a working start action while advanced preferences stay optional",
+      "status": "passed",
+      "detail": {
+        "viewport": "1440x1000",
+        "hero_start_action": true,
+        "advanced_preferences_closed": true
+      }
+    },
+    {
+      "name": "A hundred-dollar meal is selected by two explicit primary actions",
+      "status": "passed",
+      "detail": {
+        "actions": [
+          "百元內搞定",
+          "幫我選一餐"
+        ],
+        "action_count": 2,
+        "reason": "這道為什麼符合？\n每人預估 NT$ 60，在最高預算 NT$ 100 內，剩餘額度 NT$ 40。"
+      }
+    },
+    {
+      "name": "Photo categories and vegetarian shortcut preserve unrelated budget and filter choices",
+      "status": "passed",
+      "detail": {
+        "photo_category": "麵食",
+        "preserved_budget": 150,
+        "vegetarian_shortcut": true
+      }
+    },
+    {
+      "name": "Keyboard disclosure and chip removal preserve all other active constraints",
+      "status": "passed",
+      "detail": {
+        "remaining_budget": 150,
+        "vegetarian": true,
+        "candidates": 5,
+        "focus": "filter-chip"
+      }
+    },
+    {
+      "name": "All 40 menu avatars route to valid imagery and vegetarian dishes use the vegetarian atlas",
+      "status": "passed",
+      "detail": {
+        "cards": 40,
+        "vegetarian_cards": 7,
+        "images": [
+          {
+            "asset": "dining",
+            "width": 1254,
+            "height": 1254
+          },
+          {
+            "asset": "vegetarian",
+            "width": 1254,
+            "height": 1254
+          },
+          {
+            "asset": "asian",
+            "width": 1254,
+            "height": 1254
+          }
+        ],
+        "square_sprite_layer": {
+          "width": 389.328,
+          "height": 389.328
+        }
+      }
+    },
+    {
+      "name": "Empty-result actions preview exact alternatives without silently changing budget or diet",
+      "status": "passed",
+      "detail": {
+        "before": {
+          "budget": "1500",
+          "band": "luxury"
+        },
+        "after_candidates": 35,
+        "text": "換一個條件，找回選擇\n\n以下每個選項都會重新計算候選數；選一個才會套用，不會直接抽選。\n\n價位由「犒賞 2000–3000 元」改為「所有價位」\n只改這一項 → 35 道符合\n最高預算由 NT$ 1500 調高至 NT$ 2200\n只改這一項 → 1 道符合\n\n每次只調整按鈕寫出的那一項，其餘條件保留；素食篩選不會自動取消。"
+      }
+    },
+    {
+      "name": "Three photo comparisons expose budget fit and a fourth request leaves existing choices intact",
+      "status": "passed",
+      "detail": {
+        "ids": [
+          "catalog-202610-35",
+          "premium-202610-1",
+          "catalog-202610-57"
+        ],
+        "budget": 1500,
+        "text": "情境示意\n麥當勞大麥克套餐\nNT$ 200\n每人預估\n餐點類型\n速食\n辣度標記\n不辣\n素食標記\n無\n我的最愛\n未收藏\n與最高預算比較\n預算內，剩餘 NT$ 1300\n目前篩選\n符合全部目前篩選條件\n移出比較\n情境示意\n田季發爺極品海陸燒肉（每人）\nNT$ 1100\n每人預估\n餐點類型\n燒烤\n辣度標記\n不辣\n素食標記\n無\n我的最愛\n未收藏\n與最高預算比較\n預算內，剩餘 NT$ 400\n目前篩選\n符合全部目前篩選條件\n移出比較\n情境示意\n和牛燒肉套餐（每人）\nNT$ 2700\n每人預估\n餐點類型\n燒烤\n辣度標記\n不辣\n素食標記\n無\n我的最愛\n未收藏\n與最高預算比較\n超出預算 NT$ 1200\n目前篩選\n超出預算 NT$ 1200\n移出比較"
+      }
+    },
+    {
+      "name": "Readable touch controls and a working photo-menu journey at 390px",
+      "status": "passed",
+      "detail": {
+        "metrics": [
+          {
+            "selector": ".budget-pick",
+            "font": 12,
+            "height": 44,
+            "width": 50.328125
+          },
+          {
+            "selector": ".quick-pick",
+            "font": 12,
+            "height": 44,
+            "width": 102.65625
+          },
+          {
+            "selector": ".compare-toggle",
+            "font": 13,
+            "height": 46,
+            "width": 318
+          },
+          {
+            "selector": ".fav",
+            "font": 12,
+            "height": 44,
+            "width": 65
+          }
+        ],
+        "dimensions": {
+          "client": 390,
+          "scroll": 390
+        },
+        "mobile_draw": true
+      }
+    },
+    {
+      "name": "Readable touch controls and a working photo-menu journey at 320px",
+      "status": "passed",
+      "detail": {
+        "metrics": [
+          {
+            "selector": ".budget-pick",
+            "font": 12,
+            "height": 44,
+            "width": 82.65625
+          },
+          {
+            "selector": ".quick-pick",
+            "font": 12,
+            "height": 44,
+            "width": 80.65625
+          },
+          {
+            "selector": ".compare-toggle",
+            "font": 13,
+            "height": 46,
+            "width": 248
+          },
+          {
+            "selector": ".fav",
+            "font": 12,
+            "height": 44,
+            "width": 65
+          }
+        ],
+        "dimensions": {
+          "client": 320,
+          "scroll": 320
+        },
+        "mobile_draw": true
+      }
+    },
+    {
+      "name": "Mobile menu management is discoverable through its catalogue shortcut",
+      "status": "passed",
+      "detail": {
+        "created": "介面驗收餐",
+        "price": 125
+      }
+    },
+    {
+      "name": "Reduced motion and visible keyboard focus are honored",
+      "status": "passed",
+      "detail": {
+        "outlineWidth": "3px",
+        "outlineStyle": "solid",
+        "scrollBehavior": "auto",
+        "reduce": true
+      }
+    },
+    {
+      "name": "Selected text and control color pairs meet their measured contrast thresholds",
+      "status": "passed",
+      "detail": {
+        "scope": "Nine sampled opaque/default text-control pairs, not a full WCAG certification; inactive controls and photograph text are not generalized.",
+        "pairs": [
+          {
+            "selector": "body",
+            "foreground": "rgb(249, 245, 233)",
+            "background": [
+              11,
+              47,
+              39
+            ],
+            "fontSize": 15,
+            "ratio": 13.285374008181991,
+            "threshold": 4.5
+          },
+          {
+            "selector": "#budget",
+            "foreground": "rgb(23, 56, 43)",
+            "background": [
+              255,
+              253,
+              247
+            ],
+            "fontSize": 27,
+            "ratio": 12.611720010760711,
+            "threshold": 3
+          },
+          {
+            "selector": "#dish-search::placeholder",
+            "foreground": "rgb(107, 98, 88)",
+            "background": [
+              255,
+              250,
+              240
+            ],
+            "fontSize": 14,
+            "ratio": 5.745414326303056,
+            "threshold": 4.5
+          },
+          {
+            "selector": "#budget-help",
+            "foreground": "rgb(101, 112, 92)",
+            "background": [
+              246,
+              242,
+              232
+            ],
+            "fontSize": 11,
+            "ratio": 4.666358161500816,
+            "threshold": 4.5
+          },
+          {
+            "selector": "#draw",
+            "foreground": "rgb(255, 245, 222)",
+            "background": [
+              18,
+              61,
+              47
+            ],
+            "fontSize": 14,
+            "ratio": 11.167703308420293,
+            "threshold": 4.5
+          },
+          {
+            "selector": ".budget-pick",
+            "foreground": "rgb(67, 87, 65)",
+            "background": [
+              246,
+              242,
+              232
+            ],
+            "fontSize": 11,
+            "ratio": 7.0137355882645664,
+            "threshold": 4.5
+          },
+          {
+            "selector": ".quick-pick",
+            "foreground": "rgb(48, 75, 54)",
+            "background": [
+              236,
+              239,
+              223
+            ],
+            "fontSize": 12,
+            "ratio": 8.226834371576674,
+            "threshold": 4.5
+          },
+          {
+            "selector": ".card .price",
+            "foreground": "rgb(223, 197, 141)",
+            "background": [
+              21,
+              62,
+              48
+            ],
+            "fontSize": 35,
+            "ratio": 7.092652494446294,
+            "threshold": 3
+          },
+          {
+            "selector": ".media-caption",
+            "foreground": "rgb(53, 65, 46)",
+            "background": [
+              255,
+              248,
+              232
+            ],
+            "fontSize": 8,
+            "ratio": 10.192471194235624,
+            "threshold": 4.5
+          }
+        ]
+      }
+    },
+    {
+      "name": "Assets are bounded and the page makes no automatic external API requests",
+      "status": "passed",
+      "detail": {
+        "web_image_bytes": 1904644,
+        "generated_atlases": 3,
+        "generated_hero": 1,
+        "runtime_model_calls": 0
+      }
+    }
+  ],
+  "javascript_errors": [],
+  "scope": "Automated interaction, layout and selected visual/accessibility checks; no human satisfaction or task-time study."
+}

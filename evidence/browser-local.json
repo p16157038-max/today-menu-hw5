@@ -1,9 +1,9 @@
 {
-  "performed_at": "2026-11-18T18:08:14.509Z",
-  "target": "http://127.0.0.1:63950/current/",
+  "performed_at": "2026-11-18T18:13:06.722Z",
+  "target": "http://127.0.0.1:60366/current/",
   "stage": "local",
   "artifact_sha256": {
-    "index.html": "fe343fb892d4ffcc511689482f59443d0716913684be783a464f20e2329396e6",
+    "index.html": "576ad3bce6e2fd9fd0ec9263d3fb58a13b680fd99cec358425fdb0bc0fa9b2aa",
     "editorial.css": "9c477c9a68e404b12a8746f8ab3fe21a31c114b89778e33517fea053a81f7854"
   },
   "browser": "Isolated headless Microsoft Edge context; legacy functional paths explicitly expand disclosures, default disclosure UX checked separately.",
@@ -159,7 +159,7 @@
     {
       "name": "Favorite and repeated draws keep at most five immutable history snapshots",
       "status": "passed",
-      "detail": "KFC 雙層咔啦雞腿堡 XL全明星餐\nNT$ 270\nKFC 雙層咔啦雞腿堡 XL全明星餐\nNT$ 270\nKFC 雙層咔啦雞腿堡 XL全明星餐\nNT$ 270\nKFC 雙層咔啦雞腿堡 XL全明星餐\nNT$ 270\nKFC 雙層咔啦雞腿堡 XL全明星餐\nNT$ 270"
+      "detail": "KFC 咔啦雞腿堡套餐\nNT$ 200\nKFC 咔啦雞腿堡套餐\nNT$ 200\nKFC 咔啦雞腿堡套餐\nNT$ 200\nKFC 咔啦雞腿堡套餐\nNT$ 200\nKFC 咔啦雞腿堡套餐\nNT$ 200"
     },
     {
       "name": "Custom add, compare and edit update actual comparison facts",
