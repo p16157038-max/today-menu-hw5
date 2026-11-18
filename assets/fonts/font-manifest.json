@@ -1,0 +1,21 @@
+{
+  "source": "Google Fonts official font assets, SIL Open Font License files included.",
+  "CJK_subset_characters": 605,
+  "CJK_file": "noto-serif-tc.ttf",
+  "CJK_subset_css": "@font-face {\n  font-family: 'Noto Serif TC';\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(https://fonts.gstatic.com/l/font?kit=XLYzIZb5bJNDGYxLBibeHZ0BnHwmuanx8cUaGX-EN-pDIYMIjlqvqUB_jYbUgMMQFPL7QJO-mLgQI3bFHUprFb4MFJ3uuntDMSgY9WMLesu2Vd05uHpAYUFtwIgC7jPxThKS7jEpsXoNYaDpV-l8ibBibJyJAQni-tGa2P1jhm3WqGn6MN0W9w2cSMrPE53WaHG6BM0-s4GlzBkCpe2whMePZ8_l12vHbZliWNyFLIUL43XjV3NS9b9zJlA1mg2f7oIgbO0ZmH6xFHrMu5mI9y04kPF4Fw2B1dOo_Xd7NxBynwQLitvot4D9hJYFAWPP4uytv7i9ScBC2n1oyQZhHPqvWeM6xD9VLdkhV3GnulKxTLdrQReSn31kgbnRYN0AFf0mW_n9ifcemq7lSe_zPVOnbdhk0HyEdL60tEcfeqyZ0HJWzjF7tZWrHvWtALBEv2u48V7JKhgGXgXjBuk-pxDpstu5rENve3cDjDxiTU7fnjIZy1KchAiOJAuyrHbHapNmUCtwiX-OJLhpryAjZ_5MOL7ruaoh_tu658-QhDI4Ob4iXlW2DJxNZkhw9b5BPBX_5uV5m1k7h0MFdwi_RnydKt4uI8dw8TDmUx-Rg7yZiSCcCEYRXUB4p6d0_v3Pjem7OupKjBfQmKj-MJBEiLZaYvXvaeE3po5pZY6VRv2VHIXd3wLAFrqTCoN2b4suqnJZNgEqRVkyZc7X7rRujv4x55-BTSrvtLiMCZcEdCGy0pwj2Vm7yR11lSf2WtASkHGR7AzwnpYj8miFOBZMmtYZpg5GS86f09r0PGhgjnAbF9OMs1BXfAC_Yw9CqWva0m2_8obfSI8BZ5YcA-dahh8kdgdrDcWGdZ41_A7Nyx_4tO5qU2pLLNYkLf-FhnoqdRR5SlhjPlm-TuU6IkYlxSVozA_VUlQvd0fIOP9l9PyRRm3mUnD_4sTMZwmlbtM0XB2Gp7C5Vr9qtVdfHfkjmzvnMuVWQN7xDC3ZeewnQK4OWB4XFLnBVxDKxqJP5hoSPbpRXRIrnQEn8a0AtQaNmo9pPMCIw_Hxit5zcY3nbzeDS8PtQLmWwKUffQ5ZpedUeFq7t2r9CjkTitcy6ZnpIvempVovjAulhRtYdGLfOzMi9vzjZY4dxEsaiabg-419IxJ5u4obNF8Bulvjvad5ImWJqNGw_RRSyfcFC8xu_0dyi3ZIkjo01kE9SN2LbpIoKwCYS5tRSta04rB6PPZHnSDqQxUYv2DMQNicGcj9mPBSm8Qp9SkZqXca6B3KE2bD6sW7Z5HyLxnUsVI4abaTrJol-aJQ65iOCYyZ2TTux9TXQJbgKsMb018Cj4DNg47caGY7uE5fnfCm0AgLtYBpr1hAj2ZtzwOJSo6aDRq8lZojRkIaTqSSGxwY-ztkhnmB8gFKLGRI4P1BzLCywlv4VQtCCJoKs-u7UuWVr6jPuktpyRaiqB9zn8I-5xhykuBUTIQP6f0vDpJF5gP3KofmZRTBWOFaettofFGrvmBg1vj_YZXdECkAKg2A_1r-Fyd0EzDBkGNIArflrEdy-vSWxYC48DlIozpkCB3sebusRVtBvGSmzj1R6TRU9X67X8mROl-Xc5CrXQ6_xz6HNG7NG8Rbnlsh0eQbXDyok2_lF0kDQ4tXsfWvjTNNU7saQUSc0SJTx8defdzkUcyJR5TD8qvf1ChAzcFGSKXzDM-coB1LfNBszKmGqMhWnwmLeBY4GNOiZuC7OeUOWS6A_P23w9IhEQCAMm5bpmdZ-p6c4H25rjmaezDkr_WDWmnM7LHK3Yj2b_VHRSNAnF45rD9ZYG-vwsgfpSrX9uXF81hSWbMCM7dZMbept_JlLHIlrvMoNyHLs2a3MQ5llDt2edasaJEvgnqMNmwQrC_XcdUwgXoVUp0EEqAQAinGgwvSOB4SFBNMzMU-nLLSyhlrffyph3GDbpztzDTrWGa7dEjYBEYcpe1lxJGvjF3jI_eTK-LiRVR48IUGf9juEg5IyLyQkf-uNaDL38ERY6HK3iCNgXr0OLiF_W6rUFwrxToRz0_iK4_kt2T8NCnvGLDq3xuVCrs1w8WeWovXXGHvfFrkPc4cjQKvtxk6_XhTJAghynD-igbJBjmnkOdSnnySZ4LpsuWxZK_445HqxOaTJ09wz7RTUEaS-gmLxHu-Iz-TUVClPGbd2m7Xcuuy1eBOUwRZMFaPTiWYFFAnMF7shvS_HLbHiUTUdg&skey=dafe25338141b30f&v=v37) format('truetype');\n}\n",
+  "font_files": [
+    {
+      "file": "cormorant-garamond.ttf",
+      "bytes": 36900,
+      "sha256": "fc3858dfc491f19e921d2a8b073c458fb5afa36d9e3cd959255326184449c7c7"
+    },
+    {
+      "file": "noto-serif-tc.ttf",
+      "bytes": 226616,
+      "sha256": "b95916dd800dbd8729241903e541c9e9a4f3a31d1b20e4d4c209b6b62caa69fa"
+    }
+  ],
+  "display_subset_css": "@font-face {\n  font-family: 'Cormorant Garamond';\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(https://fonts.gstatic.com/l/font?kit=co3umX5slCNuHLi8bLeY9MK7whWMhyjypVO7abI26QOD_s06GnPc0NMYC9mFdZrbqiF6NPWPysEGmcfugpzeKcbPBzJ0K5m-tyyQyRnHSLDD-_JyjQQjYBbPVa3XEKAHYDR-a8ToEaJHBuxx_61IHqTId4lDSm8xidCVnwa4smeJchRr8N2J&skey=a863d1376a24bd7a&v=v21) format('truetype');\n}\n",
+  "updated_on": "2026-11-19",
+  "subset_scope": "Unique non-control characters of the final index.html; custom text uses system fallback."
+}

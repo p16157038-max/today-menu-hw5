@@ -1,0 +1,19 @@
+{
+  "mode": "built-in image_gen",
+  "requests": 3,
+  "created": "2026-11-18",
+  "prompts": [
+    {
+      "asset": "dining-editorial.jpg",
+      "prompt": "Use case: photorealistic-natural.\nAsset type: one square four-panel editorial food photography sheet for a premium Taiwanese meal selection web app. This is a single reusable website asset, not a UI screenshot.\nComposition: a seamless exact 2 by 2 grid, equal square quadrants, no gutters or borders. Each quadrant is its own carefully composed overhead food still life, subject centered so it crops well. Top left: a refined ceramic rice bowl with grilled chicken, rice and green vegetables. Top right: an elegant deep bowl of Taiwanese-style noodles with broth, greens and chopsticks just at the edge. Bottom left: an unbranded gourmet burger with a small portion of fries on a muted ceramic plate. Bottom right: sliced grilled steak with roasted vegetables on a dark artisan plate.\nStyle: high-end food magazine photography, photorealistic appetizing natural textures, soft directional window light, restrained warm ivory linen and espresso stone backgrounds, subtle bronze accents, generous breathing room within every quadrant. Cohesive light and color across all four panels. Realistic portions, not extravagant.\nConstraints: strictly no words, numbers, logos, branding, watermark, people, hands, interface elements, or prices. These are generic atmosphere illustrations, not images of specific restaurant items. Each panel must remain visually independent and fully composed. Square overall image."
+    },
+    {
+      "asset": "vegetarian-editorial.jpg",
+      "prompt": "Use case: photorealistic-natural. Use the reference image only for cohesive high-end editorial lighting, handmade ceramic plates, warm ivory linen and espresso stone. Create ONE square exact 2x2 food-photography sheet, four equal square quadrants without gutters or borders, each dish centered with generous crop-safe margins. Photorealistic and appetizing, refined five-star menu photography with realistic portions. Strictly no text, logos, watermarks, people, hands, prices, or UI. All four panels must be vegetarian, with no meat, fish, seafood or meat-like pieces. Top left: tomato and leafy vegetable noodles in a ceramic bowl. Top right: colorful vegetable curry with rice. Bottom left: a delicate clear vegetable soup beside a rice ball on a ceramic tray. Bottom right: refined Japanese vegetarian kaiseki arrangement, vegetables and tofu in small artisan bowls. These are generic atmosphere illustrations, not real restaurant item photos."
+    },
+    {
+      "asset": "asian-editorial.jpg",
+      "prompt": "Use case: photorealistic-natural. Use the reference image only for cohesive high-end editorial lighting, handmade ceramic plates, warm ivory linen and espresso stone. Create ONE square exact 2x2 food-photography sheet, four equal square quadrants without gutters or borders, each dish centered with generous crop-safe margins. Photorealistic and appetizing, refined five-star menu photography with realistic portions. Strictly no text, logos, watermarks, people, hands, prices, or UI. Top left: a bamboo dim sum basket with shrimp dumplings and siu mai. Top right: Japanese-style grilled chicken set meal with rice, vegetables and a small soup bowl. Bottom left: an inviting steaming individual hot pot with vegetables, mushrooms and thin beef slices. Bottom right: a refined restaurant buffet-table assortment, plated small portions, vegetables and savory dishes, no labels. These are generic atmosphere illustrations, not real restaurant or brand item photos."
+    }
+  ]
+}

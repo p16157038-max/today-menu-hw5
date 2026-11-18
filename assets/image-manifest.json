@@ -1,0 +1,50 @@
+{
+  "generated_on": "2026-11-18",
+  "method": "Built-in ImageGen, three atlas requests on2026-11-18 and one panoramic hero request on2026-11-19. Original PNG retained; JPEG encoding for static delivery.",
+  "illustrative": true,
+  "real_restaurant_photographs": false,
+  "images": [
+    {
+      "file": "dining-editorial.jpg",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "bytes": 491089,
+      "sha256": "63f03c96583e5aaaad7ebc291e46471d402ffb959acf3b95bea8ab56e9b2f3b9",
+      "original_png_sha256": "62288137b67bd2ddbbeded3cd06f3b78944dbc71f3b67c2803a47432da072db3"
+    },
+    {
+      "file": "vegetarian-editorial.jpg",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "bytes": 511674,
+      "sha256": "a97cbad1c4a4c68cc0615f897082e4513a96674eb03fb458f379ea165d3479e0",
+      "original_png_sha256": "a1af7a2730ab673deeccfdf6a8aa112080e1c156ba37fe564e9887be5bfd6b7c"
+    },
+    {
+      "file": "asian-editorial.jpg",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "bytes": 491866,
+      "sha256": "c793ce40978d91f59acb3b5f6dbcf7d018197abd1dd7743ca0c2a29e519cd3ff",
+      "original_png_sha256": "cb980852aebbb45562e9d46c7b81acaa77207bd5ac2cd58117fc20f611525e60"
+    },
+    {
+      "file": "restaurant-hero.jpg",
+      "generated_on": "2026-11-19",
+      "dimensions": [
+        1942,
+        809
+      ],
+      "bytes": 410015,
+      "sha256": "3113f3cde72a15787db809d071fe46f4cfbecb80adebec32368cb77b42e19ebd",
+      "original_png_sha256": "c250e8e3645aafb8740bccee304e458d311288f0e1cc26ae0df23bb122efcc7c"
+    }
+  ],
+  "total_web_image_bytes": 1904644
+}
