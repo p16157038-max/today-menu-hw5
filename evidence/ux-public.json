@@ -1,9 +1,9 @@
 {
-  "performed_at": "2026-11-18T18:11:22.724Z",
+  "performed_at": "2026-11-18T18:14:39.291Z",
   "stage": "public",
   "target": "https://p16157038-max.github.io/today-menu-hw5/",
   "artifact_sha256": {
-    "index.html": "fe343fb892d4ffcc511689482f59443d0716913684be783a464f20e2329396e6",
+    "index.html": "576ad3bce6e2fd9fd0ec9263d3fb58a13b680fd99cec358425fdb0bc0fa9b2aa",
     "editorial.css": "9c477c9a68e404b12a8746f8ab3fe21a31c114b89778e33517fea053a81f7854",
     "assets/restaurant-hero.jpg": "3113f3cde72a15787db809d071fe46f4cfbecb80adebec32368cb77b42e19ebd",
     "assets/fonts/noto-serif-tc.ttf": "b95916dd800dbd8729241903e541c9e9a4f3a31d1b20e4d4c209b6b62caa69fa",
@@ -36,7 +36,7 @@
           "幫我選一餐"
         ],
         "action_count": 2,
-        "reason": "這道為什麼符合？\n每人預估 NT$ 60，在最高預算 NT$ 100 內，剩餘額度 NT$ 40。"
+        "reason": "這道為什麼符合？\n每人預估 NT$ 100，在最高預算 NT$ 100 內，剩餘額度 NT$ 0。"
       }
     },
     {

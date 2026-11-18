@@ -1,8 +1,9 @@
 {
-  "performed_at": "2026-11-18T14:54:02.588Z",
-  "target": "Local index.html opened with file URL in an isolated Edge context",
+  "performed_at": "2026-11-18T18:15:16.097Z",
+  "target": "Whole local project opened through file URL in isolated Edge",
   "artifact_sha256": {
-    "index.html": "b1fc25f27d03970f466045ed5a3a8b816a660db704bbde297060257176eab6ba"
+    "index.html": "576ad3bce6e2fd9fd0ec9263d3fb58a13b680fd99cec358425fdb0bc0fa9b2aa",
+    "editorial.css": "9c477c9a68e404b12a8746f8ab3fe21a31c114b89778e33517fea053a81f7854"
   },
   "candidate_counts": [
     40,
@@ -10,6 +11,7 @@
     35
   ],
   "comparison_items": 1,
+  "local_font_loaded": true,
   "javascript_errors": [],
   "passed": true,
   "model_API_calls": 0
