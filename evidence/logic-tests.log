@@ -1,0 +1,23 @@
+PASS original 40 meals, 12 categories, 4 meals per brand and all price tiers remain
+PASS conflicting search and category offer only useful single-filter counts
+PASS contradictory price band and cap show exact explicit alternatives
+PASS budget zero requires an explicit increase and preserves dietary preference
+PASS dietary conflict never proposes removing vegetarian and handles multi-condition dead ends
+PASS empty favorites explain the cause and offer counted explicit exit
+PASS empty catalog offers no fabricated recovery and retains existing filters
+PASS invalid budget blocks recovery and draw until corrected
+PASS every shown action count is exact and changes only its named filter across 240 states
+PASS selected explanation includes all active constraints and exact remaining budget
+PASS condition changes refresh selected reasons and remove a stale selection
+PASS price band boundaries and budget extremes use inclusive upper budget without negative remainder
+PASS favorites, five-item history and no-repeat draw remain functional
+PASS CRUD, selected edit refresh, delete and favorite-preserving undo remain functional
+PASS sorting and all-menu view preserve the candidate pool and recovery logic
+PASS version-one storage and catalog migration preserve custom data, favorites and history
+PASS reset remains explicit and clears all filters including diet and budget
+PASS comparison keeps three unique entries, rejects the fourth and preserves draw state
+PASS comparison persists through filters and explains budget, diet and other exclusions accurately
+PASS comparison reflects edits and removes deleted meals without restoring stale entries
+PASS comparison removal, clearing and reload are accessible and do not change saved menu state
+
+21 tests passed. No network, model, browser or external dependencies used.

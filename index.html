@@ -395,6 +395,11 @@ button:disabled { opacity: .66; }
     .budget-pick{border:1px solid #d4ceba;border-radius:9px;background:#faf5e7;padding:5px 9px;min-height:34px;font-size:12px;color:#4c5036}
     .budget-pick[aria-pressed=true]{background:#ece4f7;border-color:#bbaaCA;color:#614d73}
     .load-more-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:16px 0 0}
+    .match-reasons{margin-top:15px;padding:12px 14px;background:#fffefaab;border:1px solid #c9dac5;border-radius:13px;overflow-wrap:anywhere}
+    .match-reasons h3{font-size:14px;margin:0 0 5px}.match-reasons ul{margin:0;padding-left:19px;font-size:13px;color:#435b43}.match-reasons li+li{margin-top:4px}
+    .recovery-panel{margin-top:14px;background:#fff9e9;border-color:#e5d4ac}.recovery-panel h2{font-size:18px}.recovery-panel p{font-size:13px;color:#5b604c}.recovery-actions{list-style:none;padding:0;margin:13px 0;display:grid;gap:8px}.recovery-actions button{width:100%;text-align:left;white-space:normal;overflow-wrap:anywhere;border:1px solid #d2c7a6;background:#fffefa;color:var(--green);border-radius:10px;padding:10px 13px;min-height:44px;font-size:13px;font-weight:700}.recovery-actions button:hover{background:#f0f4e7}.recovery-actions .recovery-count{display:block;font-size:12px;font-weight:400;color:#59645c;margin-top:2px}.recovery-panel .hint{font-size:12px}
+    .compare-row{margin-top:12px}.compare-toggle{width:100%;min-height:40px;border:1px solid #d5c8e2;border-radius:9px;background:#f6f0fb;color:#604b71;font-size:13px;font-weight:700}.compare-toggle[aria-pressed=true]{background:#e8dcf1;border-color:#aa8fbb}.comparison-panel{margin-top:20px;background:#fcf9ff;border-color:#ded2e8}.comparison-panel .toolbar{margin:0 0 8px}.comparison-panel h2 span{white-space:nowrap}.comparison-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}.comparison-item{min-width:0;padding:13px;background:var(--white);border:1px solid #dfd7e5;border-radius:12px;overflow-wrap:anywhere}.comparison-item h3{font-size:15px;margin:0 0 6px}.comparison-item .price{font-size:20px}.comparison-item dl{font-size:12px;margin:10px 0}.comparison-item dl>div{border-top:1px solid #ece6ef;padding:6px 0}.comparison-item dt{color:var(--muted)}.comparison-item dd{margin:1px 0 0;font-weight:600}.comparison-item .textbtn{min-height:40px}.comparison-status{font-size:13px;color:#604b71;margin:4px 0;overflow-wrap:anywhere}.comparison-panel>.hint{margin-bottom:0}.comparison-link{color:var(--green);text-underline-offset:3px}
+    @media(max-width:1100px){.comparison-items{grid-template-columns:1fr}}
     .info a{color:var(--green);text-underline-offset:3px}
     .menu-tools{display:flex;align-items:end;gap:18px;justify-content:space-between;margin:0 0 13px}.menu-tools>div{min-width:200px}.menu-tools label{font-size:12px;margin-bottom:4px}.menu-tools select{font-size:13px;min-height:40px;padding:8px 10px}.menu-tools .hint{max-width:350px;margin:0 0 4px}.premium-card{background:#fff8ee;border-color:#e2c58f}.premium-card .food-icon{background:#f5dca9}.price-tier{background:#fff0d2!important;color:#72551e!important;border-color:#e5cd99!important}
     @media(max-width:480px){.menu-tools{align-items:stretch;flex-direction:column;gap:7px}.menu-tools>div{min-width:0}.menu-tools .hint{max-width:none}}
@@ -425,10 +430,12 @@ button:disabled { opacity: .66; }
         <div class="result-body"><small>今天的選擇</small><div id="result-content"><h2 id="result-title">讓菜單幫你決定。</h2><p>準備好了嗎？按下按鈕，從符合條件的餐點中抽一個。</p></div><div class="result-actions"><button id="draw" class="btn primary" type="button">幫我選一餐 <span aria-hidden="true">↗</span></button><button id="result-favorite" class="btn subtle" type="button" hidden>加入最愛</button></div><label class="check repeat-check"><input id="avoid-repeat" type="checkbox" aria-describedby="repeat-help">不要連續抽到同一道</label><p class="hint" id="repeat-help">有兩道以上符合時，跳過上一道；只有一道時仍可抽選。</p></div>
         <div class="dish-art" aria-hidden="true"><svg viewBox="0 0 180 180" fill="none"><ellipse cx="92" cy="151" rx="68" ry="10" fill="#d3ddc9"/><path d="M35 85h112c-5 40-21 58-56 58S40 125 35 85Z" fill="#fffef9" stroke="currentColor" stroke-width="3"/><ellipse cx="91" cy="85" rx="56" ry="16" fill="#f6ce65" stroke="currentColor" stroke-width="3"/><path d="M52 77c13-20 61-19 78 1" stroke="#fffef9" stroke-width="12" stroke-linecap="round"/><path d="M62 78c3-11 11-15 16-5m19 6c3-12 11-15 17-7" stroke="#285b43" stroke-width="6" stroke-linecap="round"/><path d="M120 61 155 24m-25 41 33-36" stroke="#9a683c" stroke-width="5" stroke-linecap="round"/><path d="M56 54c-9-10 6-15-1-24m31 24c-9-10 6-15-1-24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M57 109c4 9 9 15 17 19" stroke="#dce1d5" stroke-width="4" stroke-linecap="round"/></svg></div>
       </section>
+      <section id="recovery-panel" class="panel recovery-panel" aria-labelledby="recovery-title" hidden><h2 id="recovery-title">換一個條件，找回選擇</h2><p id="recovery-summary"></p><ul id="recovery-actions" class="recovery-actions"></ul><p id="recovery-note" class="hint"></p></section>
       <div id="draw-announcement" class="sr-only" aria-live="polite" aria-atomic="true"></div>
       <section class="panel history-panel" aria-labelledby="history-title"><div class="toolbar"><h2 id="history-title">剛剛抽到的<span id="history-count"></span></h2><button type="button" class="textbtn" id="clear-history" disabled>清除紀錄</button></div><p class="hint">只保留最近 5 次，記錄當時的餐點與價格，不代表實際吃過。</p><ol class="history-list" id="history-list"></ol><p class="history-empty" id="history-empty">還沒抽過，第一道會是什麼呢？</p></section>
+      <section id="comparison-panel" class="panel comparison-panel" aria-labelledby="comparison-title"><div class="toolbar"><h2 id="comparison-title" tabindex="-1">餐點比較<span id="comparison-count">0 / 3</span></h2><button type="button" class="textbtn" id="clear-comparison" disabled>清空比較</button></div><p id="comparison-status" class="comparison-status" role="status" aria-live="polite" aria-atomic="true">在餐點卡片按「加入比較」，最多放 3 道。</p><div id="comparison-items" class="comparison-items"></div><p class="hint">比較依目前條件更新；篩選後仍保留已選餐點，方便查看差異。價格為每人估計，素食與辣度為手動標記，點餐前請向店家確認。</p></section>
       <div class="toolbar"><h2 id="menu-title">候選菜單<span id="menu-count"></span></h2><div class="segments" aria-label="菜單顯示方式"><button id="show-candidates" type="button" aria-pressed="true">符合條件</button><button id="show-all" type="button" aria-pressed="false">全部菜單</button></div></div>
-      <div class="menu-tools"><div><label for="price-sort">菜單排列</label><select id="price-sort"><option value="recommended">品牌與各價位推薦</option><option value="price-asc">價格由低到高</option><option value="price-desc">價格由高到低</option></select></div><p id="view-help" class="hint"></p></div>
+      <div class="menu-tools"><div><label for="price-sort">菜單排列</label><select id="price-sort"><option value="recommended">品牌與各價位推薦</option><option value="price-asc">價格由低到高</option><option value="price-desc">價格由高到低</option></select></div><p id="view-help" class="hint"></p></div><p class="hint"><a class="comparison-link" href="#comparison-panel">查看餐點比較 ↑</a> · 可在卡片中加入最多 3 道。</p>
       <div id="cards" class="cards" aria-labelledby="menu-title"></div>
       <div class="load-more-row"><p id="display-status" class="hint" aria-live="polite"></p><button id="load-more" type="button" class="btn subtle" hidden>再看 12 道</button></div>
       <p class="sample-note">價格是每人一份或一次用餐的預算估計，可自行修改，不是店家報價。品牌、門市、餐期、份量與服務費會影響實際金額；聚餐項目以每人估算。辣度與素食是示範設定，請先向店家確認。</p>
@@ -497,6 +504,7 @@ button:disabled { opacity: .66; }
   ];
   const $=id=>document.getElementById(id);
   let dishes=samples.map(d=>({...d})), favorites=new Set(), selected=null, editId=null, view='candidates', deleted=null, history=[], lastDrawId=null, displayLimit=12, catalogRev=CATALOG_REV;
+  let comparisonIds=[], comparisonMessage='';
   function warnStorage(text){$('storage-warning').textContent=text;$('storage-warning').hidden=false;}
   function validDish(d){return d&&typeof d.id==='string'&&d.id.length>0&&typeof d.name==='string'&&d.name.trim().length>0&&d.name.length<=40&&Number.isInteger(d.price)&&d.price>=0&&d.price<=3000&&categories.includes(d.category)&&spices.includes(d.spice)&&typeof d.vegetarian==='boolean';}
   try {
@@ -514,12 +522,69 @@ button:disabled { opacity: .66; }
   } catch(e){warnStorage('無法讀取先前資料，這次先使用示範菜單；新增與收藏仍可操作。');}
   function save(){try{localStorage.setItem(KEY,JSON.stringify({version:1,catalogRev,dishes,favorites:[...favorites],history}));}catch(e){warnStorage('此瀏覽器目前無法保存資料；本次仍可操作，但關閉或重新整理後可能遺失變更。');}}
   function budgetValue(){const input=$('budget');if(input.validity.badInput)return NaN;const v=input.value.trim();if(v==='')return null;const n=Number(v);return Number.isInteger(n)&&n>=0&&n<=3000?n:NaN;}
-  function matchesPriceBand(d){const band=$('price-band').value;return band==='all'||(band==='everyday'&&d.price<1000)||(band==='premium'&&d.price>=1000&&d.price<2000)||(band==='luxury'&&d.price>=2000);}
+  const priceBandLabels={all:'所有價位',everyday:'日常餐 0–999 元',premium:'聚餐 1000–1999 元',luxury:'犒賞 2000–3000 元'};
+  function matchesPriceBand(d,band){return band==='all'||(band==='everyday'&&d.price<1000)||(band==='premium'&&d.price>=1000&&d.price<2000)||(band==='luxury'&&d.price>=2000);}
   function searchKey(value){return value.normalize('NFKC').toLocaleLowerCase().replace(/[\s'’‘ʼ＇‐‑–—-]/g,'');}
   function brandOf(name){const key=searchKey(name);return /麥當勞|麦当劳|mcdonald/.test(key)?'mcdonalds':/kfc|肯德基/.test(key)?'kfc':'';}
   function matchesSearch(d,query){const key=searchKey(query);if(!key)return true;const aliases={mcdonalds:' McDonald McDonalds McDonald’s 麥當勞 麦当劳',kfc:' KFC 肯德基'};return searchKey(d.name+(aliases[brandOf(d.name)]||'')).includes(key);}
   function orderedMenu(list){const sort=$('price-sort').value;if(sort==='price-asc')return [...list].sort((a,b)=>a.price-b.price);if(sort==='price-desc')return [...list].sort((a,b)=>b.price-a.price);const everyday=list.filter(d=>d.price<1000);const featured=['mcdonalds','kfc'].map(brand=>everyday.find(d=>brandOf(d.name)===brand)).filter(Boolean);const featuredIds=new Set(featured.map(d=>d.id));const groups=[[...featured,...everyday.filter(d=>!featuredIds.has(d.id))],list.filter(d=>d.price>=1000&&d.price<2000),list.filter(d=>d.price>=2000)];const result=[];for(let i=0;i<Math.max(...groups.map(g=>g.length));i++)for(const group of groups)if(group[i])result.push(group[i]);return result;}
-  function eligible(){const b=budgetValue();if(Number.isNaN(b))return [];return dishes.filter(d=>(b===null||d.price<=b)&&matchesPriceBand(d)&&($('category').value==='all'||d.category===$('category').value)&&($('spice').value==='all'||d.spice===$('spice').value)&&(!$('vegetarian').checked||d.vegetarian)&&(!$('favorite-only').checked||favorites.has(d.id))&&matchesSearch(d,$('dish-search').value.trim()));}
+  function currentFilters(){return {budget:budgetValue(),priceBand:$('price-band').value,query:$('dish-search').value.trim(),category:$('category').value,spice:$('spice').value,vegetarian:$('vegetarian').checked,favoriteOnly:$('favorite-only').checked};}
+  function eligible(filters=currentFilters()){if(Number.isNaN(filters.budget))return [];return dishes.filter(d=>(filters.budget===null||d.price<=filters.budget)&&matchesPriceBand(d,filters.priceBand)&&(filters.category==='all'||d.category===filters.category)&&(filters.spice==='all'||d.spice===filters.spice)&&(!filters.vegetarian||d.vegetarian)&&(!filters.favoriteOnly||favorites.has(d.id))&&matchesSearch(d,filters.query));}
+  // Each proposed recovery changes one field. Budget and dietary limits remain in force
+  // during every count; the budget action explicitly shows its new limit.
+  function recoveryOptions(filters=currentFilters()){
+    if(Number.isNaN(filters.budget)||!dishes.length||eligible(filters).length)return [];
+    const options=[];
+    const propose=(field,value,label)=>{const count=eligible({...filters,[field]:value}).length;if(count)options.push({field,value,label,count});};
+    if(filters.query)propose('query','','清除搜尋「'+filters.query+'」');
+    if(filters.priceBand!=='all')propose('priceBand','all','價位由「'+priceBandLabels[filters.priceBand]+'」改為「所有價位」');
+    if(filters.category!=='all')propose('category','all','類型由「'+filters.category+'」改為「都可以」');
+    if(filters.spice!=='all')propose('spice','all','辣度由「'+filters.spice+'」改為「都可以」');
+    if(filters.favoriteOnly)propose('favoriteOnly',false,'取消「只從我的最愛抽選」');
+    if(filters.budget!==null){const withoutBudget=eligible({...filters,budget:null});if(withoutBudget.length){const nextBudget=Math.min(...withoutBudget.map(d=>d.price));if(nextBudget>filters.budget)propose('budget',nextBudget,'最高預算由 NT$ '+filters.budget+' 調高至 NT$ '+nextBudget);}}
+    return options;
+  }
+  function applyRecovery(option){
+    const current=recoveryOptions().find(item=>item.field===option.field&&item.value===option.value);
+    if(!current){render();return;}
+    const fields={query:'dish-search',priceBand:'price-band',category:'category',spice:'spice',favoriteOnly:'favorite-only',budget:'budget'};
+    const input=$(fields[current.field]);if(current.field==='favoriteOnly')input.checked=current.value;else input.value=String(current.value);
+    displayLimit=12;render();$('draw-announcement').textContent='已'+current.label+'；其他條件保留。現在有 '+eligible().length+' 道符合條件，請再按抽選。';$('draw').focus();
+  }
+  function matchReasons(d,filters=currentFilters()){
+    const reasons=[filters.budget===null?'預算不限；本餐每人預估 NT$ '+d.price+'。':'每人預估 NT$ '+d.price+'，在最高預算 NT$ '+filters.budget+' 內，剩餘額度 NT$ '+(filters.budget-d.price)+'。'];
+    const conditions=[];if(filters.priceBand!=='all')conditions.push('價位：'+priceBandLabels[filters.priceBand]);if(filters.category!=='all')conditions.push('類型：'+d.category);if(filters.spice!=='all')conditions.push('辣度：'+d.spice);if(conditions.length)reasons.push(conditions.join('；')+'。');
+    if(filters.vegetarian)reasons.push('符合素食手動標記；實際內容請向店家確認。');
+    if(filters.favoriteOnly)reasons.push('已在「我的最愛」中。');
+    if(filters.query)reasons.push('名稱或品牌別名符合搜尋「'+filters.query+'」。');
+    return reasons;
+  }
+  function conditionFailures(d,filters=currentFilters()){
+    const reasons=[];if(Number.isNaN(filters.budget))reasons.push('請先修正預算');else if(filters.budget!==null&&d.price>filters.budget)reasons.push('超出預算 NT$ '+(d.price-filters.budget));
+    if(!matchesPriceBand(d,filters.priceBand))reasons.push('價位不在「'+priceBandLabels[filters.priceBand]+'」');if(filters.category!=='all'&&d.category!==filters.category)reasons.push('類型不是「'+filters.category+'」');if(filters.spice!=='all'&&d.spice!==filters.spice)reasons.push('辣度不是「'+filters.spice+'」');if(filters.vegetarian&&!d.vegetarian)reasons.push('未標記為素食');if(filters.favoriteOnly&&!favorites.has(d.id))reasons.push('尚未加入最愛');if(!matchesSearch(d,filters.query))reasons.push('不符合搜尋「'+filters.query+'」');return reasons;
+  }
+  function toggleComparison(id){
+    const d=dishes.find(item=>item.id===id);if(!d)return;
+    if(comparisonIds.includes(id)){comparisonIds=comparisonIds.filter(item=>item!==id);comparisonMessage='已移除「'+d.name+'」的比較。';}
+    else if(comparisonIds.length>=3){$('comparison-status').textContent='最多比較 3 道；請先移除一道，再加入「'+d.name+'」。原有比較已保留。';return;}
+    else{comparisonIds.push(id);comparisonMessage='已加入「'+d.name+'」，目前比較 '+comparisonIds.length+' / 3 道。';}
+    render();const card=[...$('cards').children].find(el=>el.dataset.dishId===id);if(card)card.querySelector('.compare-toggle').focus();
+  }
+  function renderComparison(candidates){
+    comparisonIds=comparisonIds.filter(id=>dishes.some(d=>d.id===id));const list=$('comparison-items');list.replaceChildren();const filters=currentFilters(),bad=Number.isNaN(filters.budget);$('comparison-count').textContent=' '+comparisonIds.length+' / 3';$('clear-comparison').disabled=!comparisonIds.length;$('comparison-status').textContent=comparisonMessage||(comparisonIds.length?'比較 '+comparisonIds.length+' 道；下方已依目前篩選條件更新。':'在餐點卡片按「加入比較」，最多放 3 道。');comparisonMessage='';
+    for(const id of comparisonIds){const d=dishes.find(item=>item.id===id),item=document.createElement('article');item.className='comparison-item';item.dataset.compareId=id;const name=document.createElement('h3');name.textContent=d.name;const details=document.createElement('dl');const withinBudget=bad?'預算輸入需修正，暫不判定':filters.budget===null?'不限預算':d.price<=filters.budget?'預算內，剩餘 NT$ '+(filters.budget-d.price):'超出預算 NT$ '+(d.price-filters.budget);const isMatch=candidates.some(candidate=>candidate.id===id);const rows=[['餐點類型',d.category],['辣度標記',d.spice],['素食標記',d.vegetarian?'有（手動標記）':'無'],['我的最愛',favorites.has(id)?'已收藏':'未收藏'],['與最高預算比較',withinBudget],['目前篩選',isMatch?'符合全部目前篩選條件':conditionFailures(d,filters).join('；')]];
+      for(const [label,value] of rows){const row=document.createElement('div'),term=document.createElement('dt'),definition=document.createElement('dd');term.textContent=label;definition.textContent=value;if(label==='目前篩選')definition.className=isMatch?'match':'nomatch';row.append(term,definition);details.append(row);}
+      const remove=document.createElement('button');remove.type='button';remove.className='textbtn';remove.dataset.removeCompareId=id;remove.textContent='移出比較';remove.setAttribute('aria-label','移出比較：'+d.name);remove.addEventListener('click',()=>{toggleComparison(id);const next=$('comparison-items').querySelector('button');(next||$('comparison-title')).focus();});item.append(name,priceEl(d),details,remove);list.append(item);
+    }
+  }
+  function renderRecovery(candidates){
+    const panel=$('recovery-panel'), list=$('recovery-actions');list.replaceChildren();panel.hidden=candidates.length>0||Number.isNaN(budgetValue());if(panel.hidden)return;
+    const options=recoveryOptions();$('recovery-title').textContent=dishes.length?'換一個條件，找回選擇':'先建立你的菜單';
+    if(!dishes.length){$('recovery-summary').textContent='菜單目前是空的，調整篩選不會產生餐點。請到下方新增第一份餐點。';$('recovery-note').textContent='新增後仍依你保留的條件篩選。';return;}
+    if(options.length){$('recovery-summary').textContent=$('favorite-only').checked&&!favorites.size?'你還沒有收藏餐點。可選擇下方調整，或先到「全部菜單」加入最愛。':'以下每個選項都會重新計算候選數；選一個才會套用，不會直接抽選。';$('recovery-note').textContent='每次只調整按鈕寫出的那一項，其餘條件保留；素食篩選不會自動取消。';}
+    else{$('recovery-summary').textContent='只調整一項搜尋、價位、類型、辣度、最愛或預算，仍找不到符合餐點。';$('recovery-note').textContent=($('favorite-only').checked&&!favorites.size?'目前尚無最愛；可先收藏符合條件的餐點。':'')+'請逐項檢查多個條件，或新增符合條件的餐點。也可使用左側「重設篩選條件」重新開始（會清除所有篩選，含預算與素食）。';}
+    for(const option of options){const item=document.createElement('li'),button=document.createElement('button');button.type='button';button.dataset.recoveryField=option.field;button.textContent=option.label;const count=document.createElement('span');count.className='recovery-count';count.textContent='只改這一項 → '+option.count+' 道符合';button.append(count);button.addEventListener('click',()=>applyRecovery(option));item.append(button);list.append(item);}
+  }
   function tag(text){const t=document.createElement('span');t.className='tag';t.textContent=text;return t;}
   function priceEl(d){const p=document.createElement('div');p.className='price';p.textContent='NT$ '+d.price;const unit=document.createElement('span');unit.textContent='每人預估';p.append(unit);return p;}
   function toggleFavorite(id,origin='card'){if(favorites.has(id))favorites.delete(id);else favorites.add(id);save();render();const card=[...$('cards').children].find(el=>el.dataset.dishId===id);if(origin==='result'&&!$('result-favorite').hidden)$('result-favorite').focus();else if(card)card.querySelector('.fav').focus();else $('favorite-only').focus();}
@@ -531,8 +596,8 @@ button:disabled { opacity: .66; }
     const title=document.createElement('h2');title.id='result-title';
     const text=document.createElement('p');
     $('result-favorite').hidden=!selected;
-    if(selected){selected=dishes.find(d=>d.id===selected.id);title.textContent=selected.name;content.append(title,priceEl(selected));const tags=document.createElement('div');tags.className='tagrow';tags.append(tag(selected.category),tag(selected.spice),tag(selected.vegetarian?'素食標記':'一般餐點'));content.append(tags);text.textContent='目前有 '+candidates.length+' 道符合條件；再抽一次有 '+drawPool().length+' 道可選。';$('draw').textContent='再幫我選一次 ↗';$('result-favorite').textContent=favorites.has(selected.id)?'取消最愛':'加入最愛';}
-    else{title.textContent=candidates.length?'讓菜單幫你決定。':'目前沒有符合的餐點';text.textContent=candidates.length?'準備好了嗎？按下按鈕，從符合條件的餐點中抽一個。':'可以清除搜尋、提高預算、放寬價位或口味，或新增一份符合條件的餐點。';content.append(title);$('draw').textContent='幫我選一餐 ↗';}
+    if(selected){selected=dishes.find(d=>d.id===selected.id);title.textContent=selected.name;content.append(title,priceEl(selected));const tags=document.createElement('div');tags.className='tagrow';tags.append(tag(selected.category),tag(selected.spice),tag(selected.vegetarian?'素食標記':'一般餐點'));content.append(tags);const reasons=document.createElement('div');reasons.id='match-reasons';reasons.className='match-reasons';reasons.setAttribute('aria-live','polite');reasons.setAttribute('aria-atomic','true');const heading=document.createElement('h3');heading.textContent='這道為什麼符合？';const list=document.createElement('ul');for(const reason of matchReasons(selected)){const item=document.createElement('li');item.textContent=reason;list.append(item);}reasons.append(heading,list);content.append(reasons);text.textContent='目前有 '+candidates.length+' 道符合條件；再抽一次有 '+drawPool().length+' 道可選。';$('draw').textContent='再幫我選一次 ↗';$('result-favorite').textContent=favorites.has(selected.id)?'取消最愛':'加入最愛';}
+    else{const bad=Number.isNaN(budgetValue());title.textContent=bad?'請先修正預算':candidates.length?'讓菜單幫你決定。':dishes.length?'目前沒有符合的餐點':'菜單還沒有餐點';text.textContent=bad?'請在左側輸入 0–3000 的整數，或留白表示不限；修正後再抽選。':candidates.length?'準備好了嗎？按下按鈕，從符合條件的餐點中抽一個。':dishes.length?'先看看下方的調整方式；只有你選擇後，才會更改條件。':'到下方「把想吃的加進來」新增第一份餐點。';content.append(title);$('draw').textContent='幫我選一餐 ↗';}
     content.append(text);$('draw').disabled=candidates.length===0;$('result-panel').classList.toggle('chosen',!!selected);
     $('repeat-help').textContent=$('avoid-repeat').checked?(candidates.length===1?'只剩一道符合條件，仍可抽選同一道。':lastDrawId&&candidates.some(d=>d.id===lastDrawId)?'下一次會跳過上一道，從其他 '+drawPool().length+' 道抽選。':'下一次從符合條件的清單抽選，有其他候選時會跳過上一道。'):'有兩道以上符合時，跳過上一道；只有一道時仍可抽選。';
   }
@@ -547,7 +612,7 @@ button:disabled { opacity: .66; }
     for(const button of document.querySelectorAll('[data-brand]'))button.setAttribute('aria-pressed',String(searchKey($('dish-search').value)===(button.dataset.brand==='kfc'?'kfc':'mcdonalds')&&budgetValue()===null&&$('price-band').value==='all'&&$('category').value==='速食'&&$('spice').value==='all'&&!$('vegetarian').checked&&!$('favorite-only').checked));
     $('budget-error').hidden=!bad;$('budget-error').textContent=bad?'請輸入 0–3000 的整數，或留白不限。':'';$('budget').setAttribute('aria-invalid',String(bad));
     $('candidate-status').textContent='符合條件 '+candidates.length+' / '+dishes.length+' 道 · 我的最愛 '+favorites.size+' 道';
-    renderResult(candidates);renderHistory();
+    renderResult(candidates);renderRecovery(candidates);renderHistory();renderComparison(candidates);
     $('show-candidates').setAttribute('aria-pressed',String(view==='candidates'));$('show-all').setAttribute('aria-pressed',String(view==='all'));
     $('menu-title').firstChild.textContent=view==='all'?'全部菜單':'候選菜單';
     const query=$('dish-search').value.trim().toLocaleLowerCase();const visible=orderedMenu(view==='all'?dishes.filter(d=>matchesSearch(d,query)):candidates);$('view-help').textContent=view==='all'?'全部菜單保留名稱搜尋，暫不套用預算與其他篩選；抽選仍依條件進行。':(bad?'預算輸入需修正':budgetValue()===null?'預算不限':'每人最高 '+budgetValue()+' 元')+' · '+({all:'所有價位',everyday:'日常 0–999 元',premium:'聚餐 1000–1999 元',luxury:'犒賞 2000–3000 元'}[$('price-band').value])+'。排列只改變顯示順序。';$('menu-count').textContent=visible.length+' 道';const container=$('cards');container.replaceChildren();
@@ -559,7 +624,7 @@ button:disabled { opacity: .66; }
       const fav=document.createElement('button');fav.className='fav';fav.type='button';fav.textContent=favorites.has(d.id)?'★':'☆';fav.setAttribute('aria-label',(favorites.has(d.id)?'取消最愛：':'加入最愛：')+d.name);fav.setAttribute('aria-pressed',String(favorites.has(d.id)));fav.addEventListener('click',()=>toggleFavorite(d.id));head.append(title,fav);
       const tags=document.createElement('div');tags.className='tagrow';tags.append(tag(d.category),tag(d.spice),tag(d.vegetarian?'素食標記':'一般餐點'));const brand=brandOf(d.name);if(brand)tags.append(tag(brand==='kfc'?'KFC 肯德基':"McDonald's 麥當勞"));if(d.price>=1000){const tier=tag(d.price>=2000?'2000 元以上犒賞':'1000 元以上聚餐');tier.className+=' price-tier';tags.append(tier);}
       const foot=document.createElement('div');foot.className='card-footer';const isMatch=candidates.some(x=>x.id===d.id);const match=document.createElement('span');match.className='match'+(isMatch?'':' nomatch');match.textContent=isMatch?'符合條件':'目前條件不符';
-      const actions=document.createElement('div');actions.className='editdelete';for(const [label,fn] of [['修改',()=>startEdit(d.id)],['刪除',()=>removeDish(d.id)]]){const b=document.createElement('button');b.type='button';b.textContent=label;b.setAttribute('aria-label',label+'：'+d.name);b.addEventListener('click',fn);actions.append(b);}foot.append(match,actions);card.append(head,priceEl(d),tags,foot);container.append(card);
+      const actions=document.createElement('div');actions.className='editdelete';for(const [label,fn] of [['修改',()=>startEdit(d.id)],['刪除',()=>removeDish(d.id)]]){const b=document.createElement('button');b.type='button';b.textContent=label;b.setAttribute('aria-label',label+'：'+d.name);b.addEventListener('click',fn);actions.append(b);}foot.append(match,actions);const compareRow=document.createElement('div'),compare=document.createElement('button');compareRow.className='compare-row';compare.type='button';compare.className='compare-toggle';compare.dataset.compareId=d.id;const compared=comparisonIds.includes(d.id);compare.setAttribute('aria-pressed',String(compared));compare.setAttribute('aria-controls','comparison-panel');compare.setAttribute('aria-label',(compared?'移出比較：':'加入比較：')+d.name);compare.textContent=compared?'已加入比較 ✓':'加入比較';compare.addEventListener('click',()=>toggleComparison(d.id));compareRow.append(compare);card.append(head,priceEl(d),tags,foot,compareRow);container.append(card);
     }
   }
   function startEdit(id){const d=dishes.find(x=>x.id===id);if(!d)return;editId=id;$('dish-name').value=d.name;$('dish-price').value=d.price;$('dish-category').value=d.category;$('dish-spice').value=d.spice;$('dish-vegetarian').checked=d.vegetarian;$('form-title').textContent='修改餐點';$('save-dish').textContent='儲存修改';$('cancel-edit').hidden=false;$('form-message').textContent='';$('dish-name').focus();}
@@ -588,6 +653,7 @@ button:disabled { opacity: .66; }
   $('draw').addEventListener('click',()=>{const options=drawPool();if(!options.length){selected=null;render();return;}selected=options[Math.floor(Math.random()*options.length)];lastDrawId=selected.id;history.unshift({id:selected.id,name:selected.name,price:selected.price});history=history.slice(0,5);save();render();$('draw-announcement').textContent='抽到 '+selected.name+'，預估 '+selected.price+' 元。';$('result-panel').classList.remove('flash');void $('result-panel').offsetWidth;$('result-panel').classList.add('flash');});
   $('clear-history').addEventListener('click',()=>{history=[];lastDrawId=null;save();render();$('draw-announcement').textContent='已清除抽選紀錄，菜單與最愛保留。';($('draw').disabled?$('reset-filters'):$('draw')).focus();});
   $('result-favorite').addEventListener('click',()=>{if(selected)toggleFavorite(selected.id,'result');});
+  $('clear-comparison').addEventListener('click',()=>{comparisonIds=[];comparisonMessage='已清空比較，可重新加入最多 3 道餐點。';render();$('comparison-title').focus();});
   render();
 })();
 </script>

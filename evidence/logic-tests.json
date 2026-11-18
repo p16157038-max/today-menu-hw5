@@ -1,0 +1,19 @@
+{
+  "performed_at": "2026-11-18T14:44:55.835887+00:00",
+  "command": "node tests/hw11-regression.cjs",
+  "exit_code": 0,
+  "passed_groups": 21,
+  "filter_states_in_recovery_matrix": 240,
+  "artifact_sha256": {
+    "index.html": "b1fc25f27d03970f466045ed5a3a8b816a660db704bbde297060257176eab6ba"
+  },
+  "model_API_calls": 0,
+  "preservation": {
+    "sample_array_identical": true,
+    "storage_and_migration_identical": true,
+    "catalog_revision": 4,
+    "storage_key_preserved": true,
+    "baseline_html_sha256": "4a03cc09d837cec78b91c5d96906dc8d95a6f26bfcb925ac31e4571a7a73154d",
+    "current_html_sha256": "b1fc25f27d03970f466045ed5a3a8b816a660db704bbde297060257176eab6ba"
+  }
+}
