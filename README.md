@@ -2,7 +2,7 @@
 
 原第五週作業1006 Vibe Coding互動選餐作品，2026-11-18於第十一週補交改善。
 
-[公開網站](https://p16157038-max.github.io/today-menu-hw5/) · [規格](SPEC.md) · [AI維護規則](AGENTS.md) · [修改紀錄](CHANGELOG.md) · [實際檢查](evidence/)
+[公開網站](https://p16157038-max.github.io/today-menu-hw5/) · [規格](SPEC.md) · [AI維護規則](AGENTS.md) · [修改紀錄](CHANGELOG.md) · [實際檢查](evidence/) · [正式報告](submission/)
 
 ## 使用
 

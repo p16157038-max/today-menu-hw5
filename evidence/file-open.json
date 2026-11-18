@@ -1,0 +1,16 @@
+{
+  "performed_at": "2026-11-18T14:54:02.588Z",
+  "target": "Local index.html opened with file URL in an isolated Edge context",
+  "artifact_sha256": {
+    "index.html": "b1fc25f27d03970f466045ed5a3a8b816a660db704bbde297060257176eab6ba"
+  },
+  "candidate_counts": [
+    40,
+    0,
+    35
+  ],
+  "comparison_items": 1,
+  "javascript_errors": [],
+  "passed": true,
+  "model_API_calls": 0
+}

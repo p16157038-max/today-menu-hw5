@@ -1,0 +1,230 @@
+{
+  "performed_at": "2026-11-18T14:46:08.901Z",
+  "target": "https://p16157038-max.github.io/today-menu-hw5/",
+  "stage": "public",
+  "artifact_sha256": {
+    "index.html": "b1fc25f27d03970f466045ed5a3a8b816a660db704bbde297060257176eab6ba"
+  },
+  "browser": "Isolated headless Microsoft Edge context",
+  "model_API_calls": 0,
+  "cases": [
+    {
+      "name": "Fresh menu has 40 candidates and 12 initial cards",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "Load more shows 24 then 36 then 40 without restricting candidate count",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "McDonalds shortcut provides four matching meals",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "KFC shortcut provides four matching meals",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "Fast-food category contains both brands and eight meals",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "Budget-brand search intersection includes equal price and recognizes English alias",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "Conflicting budget and band do not silently change either condition",
+      "status": "passed",
+      "detail": {
+        "before": {
+          "budget": "1500",
+          "price-band": "luxury",
+          "dish-search": "",
+          "category": "all",
+          "spice": "all",
+          "vegetarian": false,
+          "favorite-only": false
+        },
+        "options": "價位由「犒賞 2000–3000 元」改為「所有價位」\n只改這一項 → 35 道符合\n最高預算由 NT$ 1500 調高至 NT$ 2200\n只改這一項 → 1 道符合"
+      }
+    },
+    {
+      "name": "Single price-band action restores exactly 35 meals and preserves budget",
+      "status": "passed",
+      "detail": {
+        "budget": "1500",
+        "price-band": "all",
+        "dish-search": "",
+        "category": "all",
+        "spice": "all",
+        "vegetarian": false,
+        "favorite-only": false
+      }
+    },
+    {
+      "name": "Explicit budget action chooses minimum 2200 and retains luxury band",
+      "status": "passed",
+      "detail": {
+        "label": "最高預算由 NT$ 1500 調高至 NT$ 2200\n只改這一項 → 1 道符合",
+        "after": {
+          "budget": "2200",
+          "price-band": "luxury",
+          "dish-search": "",
+          "category": "all",
+          "spice": "all",
+          "vegetarian": false,
+          "favorite-only": false
+        }
+      }
+    },
+    {
+      "name": "Recovery preserves vegetarian preference and exact resulting count",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "Unsolvable single-filter combination reports no fake recovery",
+      "status": "passed",
+      "detail": "換一個條件，找回選擇\n\n只調整一項搜尋、價位、類型、辣度、最愛或預算，仍找不到符合餐點。\n\n請逐項檢查多個條件，或新增符合條件的餐點。也可使用左側「重設篩選條件」重新開始（會清除所有篩選，含預算與素食）。"
+    },
+    {
+      "name": "Favorites-only recovery preserves vegetarian and budget",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "Selected meal explains 3000 budget, 2200 price and 800 headroom",
+      "status": "passed",
+      "detail": "這道為什麼符合？\n每人預估 NT$ 2200，在最高預算 NT$ 3000 內，剩餘額度 NT$ 800。\n價位：犒賞 2000–3000 元；類型：日式料理。\n符合素食手動標記；實際內容請向店家確認。"
+    },
+    {
+      "name": "Changed budget refreshes a surviving selection reason",
+      "status": "passed",
+      "detail": "這道為什麼符合？\n每人預估 NT$ 2200，在最高預算 NT$ 2500 內，剩餘額度 NT$ 300。\n價位：犒賞 2000–3000 元；類型：日式料理。\n符合素食手動標記；實際內容請向店家確認。"
+    },
+    {
+      "name": "Ineligible selection is removed after budget falls below price",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "Invalid numeric budget blocks draw and recovery actions",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "Zero budget has no paid candidate and no silent budget raise",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "Three distinct meals can be compared without changing the draw pool",
+      "status": "passed",
+      "detail": {
+        "ids": [
+          "catalog-202610-35",
+          "premium-202610-1",
+          "catalog-202610-57"
+        ],
+        "pool": 40
+      }
+    },
+    {
+      "name": "A fourth comparison request is rejected without replacing any selection",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "Comparison persists through filtering and explains current exclusion",
+      "status": "passed",
+      "detail": "麥當勞大麥克套餐\nNT$ 200每人預估\n餐點類型\n速食\n辣度標記\n不辣\n素食標記\n無\n我的最愛\n未收藏\n與最高預算比較\n超出預算 NT$ 100\n目前篩選\n超出預算 NT$ 100\n移出比較\n田季發爺極品海陸燒肉（每人）\nNT$ 1100每人預估\n餐點類型\n燒烤\n辣度標記\n不辣\n素食標記\n無\n我的最愛\n未收藏\n與最高預算比較\n超出預算 NT$ 1000\n目前篩選\n超出預算 NT$ 1000\n移出比較\n和牛燒肉套餐（每人）\nNT$ 2700每人預估\n餐點類型\n燒烤\n辣度標記\n不辣\n素食標記\n無\n我的最愛\n未收藏\n與最高預算比較\n超出預算 NT$ 2600\n目前篩選\n超出預算 NT$ 2600\n移出比較"
+    },
+    {
+      "name": "Remove comparison updates corresponding card button state",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "Comparison clear removes all three without touching menu or filters",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "Favorite and repeated draws keep at most five immutable history snapshots",
+      "status": "passed",
+      "detail": "KFC 蒜香白醬脆雞飯 XL全明星餐\nNT$ 220\nKFC 蒜香白醬脆雞飯 XL全明星餐\nNT$ 220\nKFC 蒜香白醬脆雞飯 XL全明星餐\nNT$ 220\nKFC 蒜香白醬脆雞飯 XL全明星餐\nNT$ 220\nKFC 蒜香白醬脆雞飯 XL全明星餐\nNT$ 220"
+    },
+    {
+      "name": "Custom add, compare and edit update actual comparison facts",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "Delete prunes comparison and undo restores actual edited meal",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "Invalid custom price does not add an item",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "Reload preserves custom edits, favorites and five history records",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "320px and 390px recovery/comparison views do not overflow the page",
+      "status": "passed",
+      "detail": [
+        {
+          "view": "comparison",
+          "width": 390,
+          "client": 390,
+          "scroll": 390
+        },
+        {
+          "view": "recovery",
+          "width": 390,
+          "client": 390,
+          "scroll": 390
+        },
+        {
+          "view": "comparison",
+          "width": 320,
+          "client": 320,
+          "scroll": 320
+        },
+        {
+          "view": "recovery",
+          "width": 320,
+          "client": 320,
+          "scroll": 320
+        }
+      ]
+    },
+    {
+      "name": "Keyboard can activate a counted recovery action",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "name": "The app has no uncaught browser exceptions",
+      "status": "passed",
+      "detail": null
+    }
+  ],
+  "summary": {
+    "total": 30,
+    "passed": 30,
+    "failed": 0
+  },
+  "javascript_errors": []
+}
