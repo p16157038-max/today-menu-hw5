@@ -1,21 +1,21 @@
 {
-  "performed_at": "2026-11-19T04:23:40+00:00",
+  "performed_at": "2026-11-19T05:04:04+00:00",
   "timestamp_source": "clock.curr_time UTC",
   "local_review_date": "2026-11-19 Asia/Taipei",
-  "report_revision": 3,
-  "scope": "Bounded static review of the new budget-priority implementation, CSS controls, AGENTS/SPEC/COURSE-INTEGRATION, regression source, report builder and final bilingual DOCX content. The reviewer did not implement the new priority core. Saved executable/browser records were checked for consistency with actual file hashes, not independently rerun. No browser operation, rendering, visual-layout QA or course grading was performed.",
+  "report_revision": 4,
+  "scope": "Bounded revision-4 report-content review of the final standalone whole-project conclusion in the builder and both bilingual DOCX files, plus README report-page description. Prior revision-3 code findings and saved execution results are retained after verifying unchanged HTML/CSS/rules/test hashes. No application edit, browser operation, test rerun, rendering, visual-layout QA or course grading was performed by this reviewer.",
   "supersedes_previous_review": true,
   "superseded_review": {
-    "performed_at": "2026-11-19T03:13:46.021741+00:00",
-    "report_revision": 2,
-    "review_file_sha256": "c823733fda743e3c1dae9da99cdd21064a0af339fc5e990998f062961d8f226f",
+    "performed_at": "2026-11-19T04:23:40+00:00",
+    "report_revision": 3,
+    "review_file_sha256": "f0fdf587d3d8177ebc44a692f76b850e1d1a5e03fee679116251faeeb17dbb25",
     "related_report_sha256": {
-      "work/hw11_1117/build_luxury_delivery.py": "2fb9051420dd85a0951eb3117fcb98118a60d5d9ae527e2da8054d48c7420d54",
-      "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/DOC_HIEU_TIENG_VIET/P16157038_HW11_NOP_LAI_HW5_BAN_DICH_TIENG_VIET_LUXURY.docx": "14c1ca0d3331faa1607e8ff31ca353b7e4e0981891fd52481ad23e49d377e095",
-      "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/成大_P16157038_系統碩一_陳世豐_補交第五週作業_今天吃什麼_整體改版_正式報告.docx": "308560a43b2a33c426e3e506d7b9a277e4f3bc70acf74c663e51caf07f646b0e"
+      "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/DOC_HIEU_TIENG_VIET/P16157038_HW11_NOP_LAI_HW5_BAN_DICH_TIENG_VIET_LUXURY.docx": "dae791821b4622145aca09654bb610d4ce5f8def61079c158f5bc65bebbc652f",
+      "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/成大_P16157038_系統碩一_陳世豐_補交第五週作業_今天吃什麼_整體改版_正式報告.docx": "ba21c6a6798dbed2f4ab015e8d83f49dadde61682b56e2872bfb9d7eee7a1de3",
+      "work/hw11_1117/build_luxury_delivery.py": "2f6d044f076c3aa2297b8c51ea541bb4b87dab10b9a301257d42b7d8bb8e3dea"
     }
   },
-  "verdict": "PASS - no unresolved blocking code or report-content finding within the bounded review scope",
+  "verdict": "PASS - no unresolved blocking conclusion/content finding; unchanged core review retained",
   "blocking_issues": 0,
   "unresolved_findings": [],
   "findings": [
@@ -27,10 +27,14 @@
     "Regression source contains the original behavior coverage plus nine budget groups, including 200/300/301 boundaries, 800/1500/3000 quotas, fallback/diet, uniform/unlimited reachability, no-repeat, reset and presentation invariance, and stale-note handling. Saved final logic evidence records 30 passing groups and 240 recovery states.",
     "All saved local/public functional records report 30/30, interface records 13/13 and budget journeys 7/7 with zero failures; their HTML/CSS and other recorded asset hashes match the files reviewed. These executions were not rerun by this reviewer.",
     "The saved public budget-3000 journey uses seed 73461 and prices [2300,2700,2900,65,2700], exactly matching both reports. Four outcomes lie in 2100-3000; the single lower-price slot is intentionally disclosed.",
-    "The final TC and VI reports integrate budget intent into the original-problem explanation and concluding outcome statement. They preserve the original/new feature distinction, correct student identity, HW11 1117 resubmission of HW5 1006, and formal teacher-facing content.",
-    "Each final DOCX has eight embedded screenshots matching all eight final PNGs, including the new budget-priority image. Root reports eight rendered pages for each document; this reviewer checked embedded content and source identity only, not page layout.",
     "Recovery values 0/35/1 and comparison arithmetic 1300/400/excess1200 remain consistent. Four generated images are illustrative, accessibility claims are limited to selected controls and nine color pairs, and no human timing/satisfaction, whole-site accessibility certification or grade is invented.",
-    "Course mapping remains confined to actual development/maintenance practices: HW8 revision reference, HW9 persistent rules, HW10 early checks/local repair/public retest. It does not claim runtime reflection, LLM Wiki, RAG or chatbot behavior."
+    "Course mapping remains confined to actual development/maintenance practices: HW8 revision reference, HW9 persistent rules, HW10 early checks/local repair/public retest. It does not claim runtime reflection, LLM Wiki, RAG or chatbot behavior.",
+    "Revision 4 adds an independent final section, 八 結論 / 8 Kết luận, with five connected paragraphs. It summarizes the original meal-choice problem and objective, completed functions and remake contribution, actual course methods, saved validation results, and the overall application/course significance.",
+    "The conclusion faithfully describes the implemented menu filtering, budget-priority draw, zero-result recovery, result explanation, three-meal comparison, visual/mobile organization and preservation of editable menus/favorites/history. It does not introduce ordering, live restaurant data or another new feature.",
+    "The conclusion accurately limits HW8 Reflection to a development-method reference, HW9 to persistent project rules and HW10 to early checks/local retesting; the HW5 specification-to-implementation-to-publication process remains clear. It makes no claim to runtime model reasoning or an implementation of unrelated course applications.",
+    "Conclusion evidence matches unchanged saved records: 30 logic groups and 240 filter states; local and public stages each record 30 functional, 13 interface and 7 budget checks. These results support the stated implemented requirements and are not presented as human satisfaction/time gains or a grade.",
+    "Both DOCX files now contain eight embedded screenshots matching the final image files and a standalone conclusion. The old page-8 value-summary paragraph is removed, and section seven is titled actual test results and AI collaboration. The README describes pages 8 and 9 consistently.",
+    "Root reports nine rendered pages per document, visual approval of new pages 8-9 and identical page-1-to-7 image hashes relative to the prior approved rendering. This reviewer did not independently render, inspect PNGs or verify page layout."
   ],
   "artifact_sha256": {
     "index.html": "f56f344f3a1e261dfc7498399f54eb8c45076c3ebfce12d8bf4fb68a916658b5",
@@ -38,46 +42,45 @@
     "AGENTS.md": "71bab2a74bb7c23ddd066728ea7a46c030ec3aa2931dff35217f819d46599fc2",
     "SPEC.md": "4ebe618fc8766146f718d5d7a1743450c308d020be0b89898e404cd1bf26a628",
     "COURSE-INTEGRATION.md": "8ffb4dea4223207a36f15c90486af8ef17d5630e0614452470f4c789e921b30f",
-    "tests/hw11-regression.cjs": "5bee1fd935fb219d11f3d4f7b206d9fda25f5a9e129f63da5e60400d0e245e09"
+    "tests/hw11-regression.cjs": "5bee1fd935fb219d11f3d4f7b206d9fda25f5a9e129f63da5e60400d0e245e09",
+    "README.md": "aa84c030a009a2ed98ce4df5e3453766d01f9e79e43e56e79337ca74dcede111"
   },
   "related_artifact_sha256": {
-    "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/DOC_HIEU_TIENG_VIET/P16157038_HW11_NOP_LAI_HW5_BAN_DICH_TIENG_VIET_LUXURY.docx": "dae791821b4622145aca09654bb610d4ce5f8def61079c158f5bc65bebbc652f",
-    "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/成大_P16157038_系統碩一_陳世豐_補交第五週作業_今天吃什麼_整體改版_正式報告.docx": "ba21c6a6798dbed2f4ab015e8d83f49dadde61682b56e2872bfb9d7eee7a1de3",
-    "work/hw11_1117/build_luxury_delivery.py": "2f6d044f076c3aa2297b8c51ea541bb4b87dab10b9a301257d42b7d8bb8e3dea"
+    "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/DOC_HIEU_TIENG_VIET/P16157038_HW11_NOP_LAI_HW5_BAN_DICH_TIENG_VIET_LUXURY.docx": "3621ced9762bea0f00c150cfb77fb56b5070ecdb3bc73f913a78ef8619072187",
+    "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/成大_P16157038_系統碩一_陳世豐_補交第五週作業_今天吃什麼_整體改版_正式報告.docx": "91155da33c5eedb8369879a0186b93fa094a4904d45eb3dae7164ae398cf34dd",
+    "work/hw11_1117/build_luxury_delivery.py": "14070da5a6d1f8940ec85b5f8421a1e3c7b156d56c3ef59bb4c81aea841310a5"
   },
   "reports": [
     {
       "path": "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/DOC_HIEU_TIENG_VIET/P16157038_HW11_NOP_LAI_HW5_BAN_DICH_TIENG_VIET_LUXURY.docx",
-      "sha256": "dae791821b4622145aca09654bb610d4ce5f8def61079c158f5bc65bebbc652f",
+      "sha256": "3621ced9762bea0f00c150cfb77fb56b5070ecdb3bc73f913a78ef8619072187",
       "author": "陳世豐",
       "embedded_images": 8,
       "all_eight_embedded_images_match_final_screenshot_files": true,
-      "priority_policy_and_exact_seeded_public_example_present": true,
-      "qualified_complete_cycle_quota_and_fallback_present": true,
-      "final_budget_motivation_and_outcome_coherence_present": true,
-      "causal_motivation_and_old_new_distinction": true,
+      "standalone_conclusion_heading": "8 Kết luận",
+      "conclusion_connected_paragraphs": 5,
+      "conclusion_covers_problem_results_methods_evidence_and_significance": true,
+      "conclusion_adds_no_new_feature_or_unverified_human_outcome_claim": true,
       "course_mapping_development_scope_qualified": true,
-      "current_menu_initial_40_precision_present": true,
       "private_submission_instructions_in_formal_report": false,
       "duplicate_long_paragraphs": 0,
-      "page_count_reported_by_root": 8,
+      "page_count_reported_by_root": 9,
       "page_count_or_layout_independently_verified": false
     },
     {
       "path": "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/成大_P16157038_系統碩一_陳世豐_補交第五週作業_今天吃什麼_整體改版_正式報告.docx",
-      "sha256": "ba21c6a6798dbed2f4ab015e8d83f49dadde61682b56e2872bfb9d7eee7a1de3",
+      "sha256": "91155da33c5eedb8369879a0186b93fa094a4904d45eb3dae7164ae398cf34dd",
       "author": "陳世豐",
       "embedded_images": 8,
       "all_eight_embedded_images_match_final_screenshot_files": true,
-      "priority_policy_and_exact_seeded_public_example_present": true,
-      "qualified_complete_cycle_quota_and_fallback_present": true,
-      "final_budget_motivation_and_outcome_coherence_present": true,
-      "causal_motivation_and_old_new_distinction": true,
+      "standalone_conclusion_heading": "八 結論",
+      "conclusion_connected_paragraphs": 5,
+      "conclusion_covers_problem_results_methods_evidence_and_significance": true,
+      "conclusion_adds_no_new_feature_or_unverified_human_outcome_claim": true,
       "course_mapping_development_scope_qualified": true,
-      "current_menu_initial_40_precision_present": true,
       "private_submission_instructions_in_formal_report": false,
       "duplicate_long_paragraphs": 0,
-      "page_count_reported_by_root": 8,
+      "page_count_reported_by_root": 9,
       "page_count_or_layout_independently_verified": false
     }
   ],
@@ -190,11 +193,18 @@
     "HW9": "Teacher lecture physical pages 18,22,24: concrete deliverables, limits, acceptance and persistent project rules.",
     "HW10": "Teacher lecture physical pages 14,21-26,45-47: executable checks, loop limits, local failure routing and step-level reruns."
   },
-  "course_source_note": "Lecture page references retained from the earlier source review; original lecture PDFs were not reopened during this bounded revision-3 pass.",
+  "course_source_note": "Lecture references and prior core findings retained from earlier bounded reviews; original lecture PDFs were not reopened during the conclusion-only revision-4 pass.",
   "original_HW5_LMS_full_rubric_available": false,
   "grade_claimed": false,
   "browser_tests_run_by_this_reviewer": false,
   "render_or_visual_QA_run_by_this_reviewer": false,
   "application_files_modified_by_this_reviewer": false,
-  "reports_modified_by_this_reviewer": false
+  "reports_modified_by_this_reviewer": false,
+  "revision_4_change_scope": {
+    "application_html_css_unchanged": true,
+    "rules_and_regression_source_unchanged": true,
+    "new_standalone_whole_project_conclusion": true,
+    "intro_or_submission_guide_rewritten_for_this_request": false,
+    "test_rerun_required_for_unchanged_app": false
+  }
 }
