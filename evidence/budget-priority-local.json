@@ -1,0 +1,184 @@
+{
+  "performed_at": "2026-11-19T04:14:22.640Z",
+  "target": "http://127.0.0.1:8139/",
+  "stage": "local",
+  "random_seed": 73461,
+  "artifact_sha256": {
+    "index.html": "f56f344f3a1e261dfc7498399f54eb8c45076c3ebfce12d8bf4fb68a916658b5",
+    "editorial.css": "8aefb887b7c403c8a46f506f8c016aa4b4ed9e4ca2c3dd498e1567285a3914e0",
+    "assets/fonts/noto-serif-tc.ttf": "6fe017f1890d38914c0123c159525ea07aabfb2e151bb8038f2be42a055771ee"
+  },
+  "summary": {
+    "total": 7,
+    "passed": 7,
+    "failed": 0
+  },
+  "cases": [
+    {
+      "name": "Actual five-draw journey at budget 200",
+      "status": "passed",
+      "detail": {
+        "budget": 200,
+        "mode": "near-budget",
+        "summary": "從全部本次可抽餐點同機率抽選；每人最高預算 NT$ 200。",
+        "prices": [
+          140,
+          85,
+          80,
+          170,
+          85
+        ],
+        "names": [
+          "鹽酥雞拼盤",
+          "嘉義火雞肉飯",
+          "辣味拌麵",
+          "麥當勞辣味四盎司牛肉堡經典套餐",
+          "蚵仔煎"
+        ]
+      }
+    },
+    {
+      "name": "Actual five-draw journey at budget 800",
+      "status": "passed",
+      "detail": {
+        "budget": 800,
+        "mode": "near-budget",
+        "summary": "優先價位為每人 NT$ 560–800。5次一輪：4次優先區、1次較低價；每組內隨機。",
+        "prices": [
+          700,
+          800,
+          800,
+          75,
+          800
+        ],
+        "names": [
+          "韓式 BBQ（每人）",
+          "麻辣火鍋（每人）",
+          "蔬食 Buffet 餐費預算",
+          "雞肉三明治",
+          "麻辣火鍋（每人）"
+        ]
+      }
+    },
+    {
+      "name": "Actual five-draw journey at budget 1500",
+      "status": "passed",
+      "detail": {
+        "budget": 1500,
+        "mode": "near-budget",
+        "summary": "優先價位為每人 NT$ 1050–1500。5次一輪：4次優先區、1次較低價；每組內隨機。",
+        "prices": [
+          1500,
+          1100,
+          1500,
+          65,
+          1100
+        ],
+        "names": [
+          "山里烤物午間套餐（每人）",
+          "田季發爺極品海陸燒肉（每人）",
+          "山里烤物午間套餐（每人）",
+          "蔬菜湯與飯糰",
+          "田季發爺極品海陸燒肉（每人）"
+        ]
+      }
+    },
+    {
+      "name": "Actual five-draw journey at budget 3000",
+      "status": "passed",
+      "detail": {
+        "budget": 3000,
+        "mode": "near-budget",
+        "summary": "優先價位為每人 NT$ 2100–3000。5次一輪：4次優先區、1次較低價；每組內隨機。",
+        "prices": [
+          2300,
+          2700,
+          2900,
+          65,
+          2700
+        ],
+        "names": [
+          "晶華栢麗廳假日午晚餐（每人）",
+          "和牛燒肉套餐（每人）",
+          "山里澳洲和牛網燒會席（每人）",
+          "蔬菜湯與飯糰",
+          "和牛燒肉套餐（每人）"
+        ]
+      }
+    },
+    {
+      "name": "Uniform choice is explicit and changing mode invalidates the previous policy note",
+      "status": "passed",
+      "detail": {
+        "mode": "uniform",
+        "note": "從全部本次可抽餐點同機率抽選；每人最高預算 NT$ 3000。"
+      }
+    },
+    {
+      "name": "No target-band restaurant is handled by the existing higher-priced eligible band",
+      "status": "passed",
+      "detail": {
+        "summary": "本次可抽清單沒有 NT$ 2100–3000 的餐點，改以現有較高價位 NT$ 176–220 為優先區。5次一輪：4次優先區、1次較低價；每組內隨機。",
+        "prices": [
+          220,
+          220,
+          220,
+          85,
+          220
+        ],
+        "names": [
+          "紅燒牛肉麵",
+          "紅燒牛肉麵",
+          "紅燒牛肉麵",
+          "番茄蛋麵",
+          "紅燒牛肉麵"
+        ]
+      }
+    },
+    {
+      "name": "Avoid-repeat applies before priority selection without dropping diet or price constraints",
+      "status": "passed",
+      "detail": {
+        "vegetarian": true,
+        "avoid_repeat": true,
+        "prices": [
+          2200,
+          800,
+          85,
+          2200,
+          800,
+          2200,
+          800,
+          2200,
+          800,
+          2200,
+          800,
+          100,
+          2200,
+          85,
+          120
+        ],
+        "names": [
+          "山里精進會席（每人）",
+          "蔬食 Buffet 餐費預算",
+          "番茄蛋麵",
+          "山里精進會席（每人）",
+          "蔬食 Buffet 餐費預算",
+          "山里精進會席（每人）",
+          "蔬食 Buffet 餐費預算",
+          "山里精進會席（每人）",
+          "蔬食 Buffet 餐費預算",
+          "山里精進會席（每人）",
+          "蔬食 Buffet 餐費預算",
+          "素食滷味拼盤",
+          "山里精進會席（每人）",
+          "番茄蛋麵",
+          "蔬菜咖哩飯"
+        ]
+      }
+    }
+  ],
+  "javascript_errors": [],
+  "model_API_calls": 0,
+  "scope": "Actual browser interactions with a seeded RNG for reproducible quota verification; no human satisfaction study."
+}

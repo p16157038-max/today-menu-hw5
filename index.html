@@ -15,10 +15,10 @@
 <p id="catalog-update" class="notice" role="status" hidden></p><p id="storage-warning" class="notice" role="status" hidden></p>
 <section class="filters" id="planner" aria-labelledby="filter-title"><div class="planner-heading"><div><span class="section-kicker">MAKE IT YOUR TABLE</span><h2 id="filter-title">今天，想怎麼吃？</h2></div><p class="status" id="candidate-status" aria-live="polite"></p></div>
 <div class="planner-grid">
-<div class="field budget-field"><label for="budget">每人最高預算</label><div class="budget-input"><span aria-hidden="true">NT$</span><input id="budget" type="number" min="0" max="3000" step="1" placeholder="不限預算" inputmode="numeric" aria-describedby="budget-help budget-error"></div><div class="budget-picks" aria-label="快速選擇預算"><button type="button" data-budget="100" class="budget-pick" aria-pressed="false">100</button><button type="button" data-budget="300" class="budget-pick" aria-pressed="false">300</button><button type="button" data-budget="800" class="budget-pick" aria-pressed="false">800</button><button type="button" data-budget="1500" class="budget-pick" aria-pressed="false">1500</button><button type="button" data-budget="3000" class="budget-pick" aria-pressed="false">3000</button><button type="button" data-budget="" class="budget-pick" aria-pressed="false">不限</button></div><p class="hint" id="budget-help">新臺幣 0–3000 元，留白不限；上限也包含在內。</p><p id="budget-error" class="warning" role="status" hidden></p></div>
+<div class="field budget-field"><label for="budget">每人用餐預算</label><div class="budget-input"><span aria-hidden="true">NT$</span><input id="budget" type="number" min="0" max="3000" step="1" placeholder="不限預算" inputmode="numeric" aria-describedby="budget-help budget-error"></div><div class="budget-picks" aria-label="快速選擇預算"><button type="button" data-budget="100" class="budget-pick" aria-pressed="false">100</button><button type="button" data-budget="300" class="budget-pick" aria-pressed="false">300</button><button type="button" data-budget="800" class="budget-pick" aria-pressed="false">800</button><button type="button" data-budget="1500" class="budget-pick" aria-pressed="false">1500</button><button type="button" data-budget="3000" class="budget-pick" aria-pressed="false">3000</button><button type="button" data-budget="" class="budget-pick" aria-pressed="false">不限</button></div><p class="hint" id="budget-help">新臺幣 0–3000 元，留白不限；不會超過設定金額。</p><p id="budget-error" class="warning" role="status" hidden></p></div>
 <div><nav class="quick-picks" aria-label="快速設定餐點條件"><p class="quick-label">從一個心情開始</p><div class="quick-grid"><button type="button" class="quick-pick" id="preset-budget" aria-pressed="false">百元內搞定</button><button type="button" class="quick-pick" id="preset-veggie" aria-pressed="false">清爽素食</button><button type="button" class="quick-pick" id="preset-spicy" aria-pressed="false">今天想吃辣</button></div><p class="hint">套用心情會重設全部篩選，再設定新條件。</p></nav><div class="checks"><label class="check"><input id="vegetarian" type="checkbox">只看素食標記</label><label class="check"><input id="favorite-only" type="checkbox">只看我的最愛</label></div></div>
 <div class="planner-action"><button id="draw" class="btn primary" type="button">幫我選一餐 ↗</button><label class="check repeat-check"><input id="avoid-repeat" type="checkbox" aria-describedby="repeat-help">不要連續抽到同一道</label><p class="hint" id="repeat-help">有其他候選時跳過上一道；只有一道仍可抽選。</p></div>
-</div><details class="advanced" id="advanced-filters"><summary><span>更多偏好<span id="advanced-count" class="advanced-count"></span></span></summary><div class="advanced-fields">
+</div><div class="draw-policy-controls"><div class="field"><label for="draw-mode">抽選偏好</label><select id="draw-mode" aria-describedby="draw-policy-summary"><option value="near-budget">貼近預算優先</option><option value="uniform">所有符合餐點同機率</option></select></div><p id="draw-policy-summary" class="draw-policy-summary" aria-live="polite" aria-atomic="true"></p></div><details class="advanced" id="advanced-filters"><summary><span>更多偏好<span id="advanced-count" class="advanced-count"></span></span></summary><div class="advanced-fields">
         <div class="field"><label for="category">餐點類型</label><select id="category"><option value="all">所有類型</option><option value="飯食">飯食</option><option value="麵食">麵食</option><option value="輕食">輕食</option><option value="其他">其他</option><option value="早餐">早餐</option><option value="台式小吃">台式小吃</option><option value="速食">速食</option><option value="港式點心">港式點心</option><option value="日式料理">日式料理</option><option value="火鍋">火鍋</option><option value="燒烤">燒烤</option><option value="Buffet">Buffet</option></select></div>
         <div class="field"><label for="spice">辣度偏好</label><select id="spice"><option value="all">所有辣度</option><option value="不辣">不辣</option><option value="微辣">微辣</option><option value="辣">辣</option></select></div>
         <div class="field"><label for="price-band">這餐的價位區間</label><select id="price-band" aria-describedby="price-band-help"><option value="all">所有價位</option><option value="everyday">日常餐 0–999 元</option><option value="premium">聚餐 1000–1999 元</option><option value="luxury">犒賞 2000–3000 元</option></select><p class="hint" id="price-band-help">與最高預算一起套用。</p></div>
@@ -96,6 +96,7 @@
   const $=id=>document.getElementById(id);
   let dishes=samples.map(d=>({...d})), favorites=new Set(), selected=null, editId=null, view='candidates', deleted=null, history=[], lastDrawId=null, displayLimit=12, catalogRev=CATALOG_REV;
   let comparisonIds=[], comparisonMessage='';
+  let selectedDrawNote=null;
   function warnStorage(text){$('storage-warning').textContent=text;$('storage-warning').hidden=false;}
   function validDish(d){return d&&typeof d.id==='string'&&d.id.length>0&&typeof d.name==='string'&&d.name.trim().length>0&&d.name.length<=40&&Number.isInteger(d.price)&&d.price>=0&&d.price<=3000&&categories.includes(d.category)&&spices.includes(d.spice)&&typeof d.vegetarian==='boolean';}
   try {
@@ -197,6 +198,100 @@
   function priceEl(d){const p=document.createElement('div');p.className='price';p.textContent='NT$ '+d.price;const unit=document.createElement('span');unit.textContent='每人預估';p.append(unit);return p;}
   function toggleFavorite(id,origin='card'){if(favorites.has(id))favorites.delete(id);else favorites.add(id);save();render();const card=[...$('cards').children].find(el=>el.dataset.dishId===id);if(origin==='result'&&!$('result-favorite').hidden)$('result-favorite').focus();else if(card)card.querySelector('.fav').focus();else $('favorite-only').focus();}
   function drawPool(){const candidates=eligible();return $('avoid-repeat').checked&&candidates.length>1?candidates.filter(d=>d.id!==lastDrawId):candidates;}
+  let budgetDrawSlots = [], budgetDrawBagKey = '';
+
+  function budgetPolicyMode(filters = currentFilters()) {
+    const value = filters.drawMode ?? filters.mode ?? $('draw-mode')?.value ?? 'near-budget';
+    return value === 'uniform' ? 'uniform' : 'near-budget';
+  }
+
+  /** Return the current configuration signature; drawing/history and presentation do not change it. */
+  function currentDrawPolicyKey() {
+    const filters = currentFilters();
+    return JSON.stringify({
+      filters: {
+        budget: Number.isNaN(filters.budget) ? 'invalid-number' : filters.budget,
+        priceBand: filters.priceBand,
+        query: filters.query,
+        category: filters.category,
+        spice: filters.spice,
+        vegetarian: filters.vegetarian,
+        favoriteOnly: filters.favoriteOnly
+      },
+      mode: budgetPolicyMode(filters),
+      avoidRepeat: Boolean($('avoid-repeat')?.checked),
+      dishes,
+      favorites: [...favorites].sort()
+    });
+  }
+
+  /** Classify the already-filtered, already-repeat-adjusted pool without changing any filter. */
+  function drawPolicy(pool = drawPool(), filters = currentFilters()) {
+    const budget = filters.budget === undefined ? null : filters.budget;
+    const validBudget = budget === null || (Number.isInteger(budget) && budget >= 0 && budget <= 3000);
+    const available = validBudget ? pool.filter(d => d && Number.isInteger(d.price) && d.price >= 0 && d.price <= 3000 && (budget === null || d.price <= budget)) : [];
+    const targetLow = validBudget && budget !== null ? Math.ceil(0.7 * budget) : null;
+    if (!validBudget || budget === null || budget <= 300 || budgetPolicyMode(filters) === 'uniform') {
+      return {preferred: available, other: [], kind: 'uniform', low: null, high: budget, targetLow, budget};
+    }
+    const target = available.filter(d => d.price >= targetLow);
+    if (target.length || !available.length) {
+      return {preferred: target, other: available.filter(d => d.price < targetLow), kind: 'near-budget', low: targetLow, high: budget, targetLow, budget};
+    }
+    const high = Math.max(...available.map(d => d.price)), low = Math.ceil(0.8 * high);
+    return {preferred: available.filter(d => d.price >= low), other: available.filter(d => d.price < low), kind: 'fallback', low, high, targetLow, budget};
+  }
+
+  /** Describe this effective pool; a 4/1 quota applies only while both price groups are available. */
+  function drawPolicySummary(policy) {
+    const count = policy.preferred.length + policy.other.length;
+    if (!count) return policy.budget !== null && (!Number.isInteger(policy.budget) || policy.budget < 0 || policy.budget > 3000) ? '請先修正預算，再重新選餐。' : '目前沒有符合條件的餐點。';
+    if (policy.kind === 'uniform') return policy.budget === null ? '未設預算，從全部本次可抽餐點同機率抽選。' : '從全部本次可抽餐點同機率抽選；每人最高預算 NT$ ' + policy.budget + '。';
+    const range = 'NT$ ' + policy.low + '–' + policy.high;
+    const intro = policy.kind === 'fallback'
+      ? '本次可抽清單沒有 NT$ ' + policy.targetLow + '–' + policy.budget + ' 的餐點，改以現有較高價位 ' + range + ' 為優先區。'
+      : '優先價位為每人 ' + range + '。';
+    if (policy.preferred.length && policy.other.length) return intro + '5次一輪：4次優先區、1次較低價；每組內隨機。';
+    return intro + (count === 1 ? '本次可抽清單只有1道，會選此道。' : '本次可抽餐點都在優先區，從這 ' + count + ' 道同機率抽選。');
+  }
+
+  /** Restart the quota after an explicit configuration reset; no menu or stored data is modified. */
+  function resetDrawPolicy() {
+    budgetDrawSlots = [];
+    budgetDrawBagKey = '';
+  }
+
+  /** Choose from the supplied actual draw pool and return the dish, factual explanation and configuration key. */
+  function chooseBudgetMeal(pool = drawPool()) {
+    const policy = drawPolicy(pool), key = currentDrawPolicyKey();
+    const bagKey = key + '|' + JSON.stringify({kind: policy.kind, low: policy.low, high: policy.high, hasOther: policy.other.length > 0});
+    if (budgetDrawBagKey !== bagKey) {
+      budgetDrawSlots = [];
+      budgetDrawBagKey = bagKey;
+    }
+    const count = policy.preferred.length + policy.other.length;
+    if (!count) return {dish: null, note: drawPolicySummary(policy), key};
+    let group = policy.preferred, tier = 'preferred';
+    if (policy.preferred.length && policy.other.length) {
+      if (!budgetDrawSlots.length) {
+        budgetDrawSlots = ['preferred', 'preferred', 'preferred', 'preferred', 'other'];
+        for (let i = budgetDrawSlots.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [budgetDrawSlots[i], budgetDrawSlots[j]] = [budgetDrawSlots[j], budgetDrawSlots[i]];
+        }
+      }
+      tier = budgetDrawSlots.pop();
+      group = tier === 'other' ? policy.other : policy.preferred;
+    } else {
+      budgetDrawSlots = [];
+    }
+    const dish = group[Math.floor(Math.random() * group.length)];
+    const tierNote = policy.kind === 'uniform' ? '' : tier === 'other' ? '本次從較低價組選出。' : '本次從優先區選出。';
+    const repeatNote = $('avoid-repeat')?.checked ? (policy.kind === 'uniform' ? '本次已先套用不連續重複規則。' : '本次已先套用不連續重複規則，再計算優先區。') : '';
+    return {dish, note: drawPolicySummary(policy) + tierNote + repeatNote, key};
+  }
+
+  let renderedDrawPolicyKey=null;
   function renderHistory(){const list=$('history-list');list.replaceChildren();$('history-empty').hidden=history.length>0;$('clear-history').disabled=history.length===0;$('history-count').textContent=' '+history.length+' / 5';for(const h of history){const item=document.createElement('li');item.className='history-item';const name=document.createElement('span');name.textContent=h.name;const price=document.createElement('span');price.className='history-price';price.textContent='NT$ '+h.price;item.append(name,price);list.append(item);}}
   function renderResult(candidates){
     if(selected&&!candidates.some(d=>d.id===selected.id))selected=null;
@@ -204,12 +299,14 @@
     const title=document.createElement('h2');title.id='result-title';
     const text=document.createElement('p');
     $('result-favorite').hidden=!selected;
-    if(selected){selected=dishes.find(d=>d.id===selected.id);title.textContent=selected.name;content.append(title,priceEl(selected));const tags=document.createElement('div');tags.className='tagrow';tags.append(tag(selected.category),tag(selected.spice),tag(selected.vegetarian?'素食標記':'一般餐點'));content.append(tags);const reasons=document.createElement('div');reasons.id='match-reasons';reasons.className='match-reasons';reasons.setAttribute('aria-live','polite');reasons.setAttribute('aria-atomic','true');const heading=document.createElement('h3');heading.textContent='這道為什麼符合？';const list=document.createElement('ul');for(const reason of matchReasons(selected)){const item=document.createElement('li');item.textContent=reason;list.append(item);}reasons.append(heading,list);content.append(reasons);text.textContent='目前有 '+candidates.length+' 道符合條件；再抽一次有 '+drawPool().length+' 道可選。';$('draw').textContent='再幫我選一次 ↗';$('result-favorite').textContent=favorites.has(selected.id)?'取消最愛':'加入最愛';}
+    if(selected){selected=dishes.find(d=>d.id===selected.id);title.textContent=selected.name;content.append(title,priceEl(selected));const tags=document.createElement('div');tags.className='tagrow';tags.append(tag(selected.category),tag(selected.spice),tag(selected.vegetarian?'素食標記':'一般餐點'));content.append(tags);const reasons=document.createElement('div');reasons.id='match-reasons';reasons.className='match-reasons';reasons.setAttribute('aria-live','polite');reasons.setAttribute('aria-atomic','true');const heading=document.createElement('h3');heading.textContent='這道為什麼符合？';const list=document.createElement('ul');for(const reason of matchReasons(selected)){const item=document.createElement('li');item.textContent=reason;list.append(item);}reasons.append(heading,list);content.append(reasons);const policyNote=document.createElement('p');policyNote.id='draw-selection-note';policyNote.className='draw-selection-note';policyNote.textContent=selectedDrawNote&&selectedDrawNote.id===selected.id&&selectedDrawNote.key===currentDrawPolicyKey()?selectedDrawNote.note:'請再抽一次，以顯示目前設定的抽選記錄。';content.append(policyNote);text.textContent='目前有 '+candidates.length+' 道符合條件；依抽選偏好挑選，不超過設定預算。';$('draw').textContent='再幫我選一次 ↗';$('result-favorite').textContent=favorites.has(selected.id)?'取消最愛':'加入最愛';}
     else{const bad=Number.isNaN(budgetValue());title.textContent=bad?'請先修正預算':candidates.length?'讓菜單幫你決定。':dishes.length?'目前沒有符合的餐點':'菜單還沒有餐點';text.textContent=bad?'請在條件區輸入 0–3000 的整數，或留白表示不限；修正後再抽選。':candidates.length?'準備好了嗎？按下按鈕，從符合條件的餐點中抽一個。':dishes.length?'先看看下方的調整方式；只有你選擇後，才會更改條件。':'到下方「把想吃的加進來」新增第一份餐點。';content.append(title);$('draw').textContent='幫我選一餐 ↗';}
     content.append(text);$('draw').disabled=candidates.length===0;$('result-panel').classList.toggle('chosen',!!selected);$('result-panel').classList.toggle('waiting',!selected&&candidates.length>0&&!Number.isNaN(budgetValue()));const resultPhoto=$('result-photo');resultPhoto.hidden=!selected;if(selected){const scene=foodScene(selected);resultPhoto.dataset.atlas=scene.atlas;resultPhoto.dataset.scene=scene.scene;}
     $('repeat-help').textContent=$('avoid-repeat').checked?(candidates.length===1?'只剩一道符合條件，仍可抽選同一道。':lastDrawId&&candidates.some(d=>d.id===lastDrawId)?'下一次會跳過上一道，從其他 '+drawPool().length+' 道抽選。':'下一次從符合條件的清單抽選，有其他候選時會跳過上一道。'):'有兩道以上符合時，跳過上一道；只有一道時仍可抽選。';
   }
   function render(){
+    const drawKey=currentDrawPolicyKey();if(renderedDrawPolicyKey!==drawKey){resetDrawPolicy();renderedDrawPolicyKey=drawKey;}
+    $('draw-policy-summary').textContent=drawPolicySummary(drawPolicy());
     $('comparison-feedback').hidden=true;
     const candidates=eligible(), bad=Number.isNaN(budgetValue());
     const defaults=$('price-band').value==='all'&&$('category').value==='all'&&!$('favorite-only').checked&&$('dish-search').value.trim()==='';
@@ -259,9 +356,10 @@
   $('price-sort').addEventListener('change',()=>{displayLimit=12;render();});
   $('load-more').addEventListener('click',()=>{displayLimit+=12;render();if($('load-more').hidden)$('show-all').focus();});
   $('show-all').addEventListener('click',()=>{view='all';displayLimit=12;render();});$('show-candidates').addEventListener('click',()=>{view='candidates';displayLimit=12;render();});
-  function drawMeal(){const options=drawPool();if(!options.length){selected=null;render();return;}selected=options[Math.floor(Math.random()*options.length)];lastDrawId=selected.id;history.unshift({id:selected.id,name:selected.name,price:selected.price});history=history.slice(0,5);save();render();$('draw-announcement').textContent='抽到 '+selected.name+'，預估 '+selected.price+' 元。';$('result-panel').classList.remove('flash');void $('result-panel').offsetWidth;$('result-panel').classList.add('flash');}
+  function drawMeal(){const options=drawPool();if(!options.length){selected=null;selectedDrawNote=null;render();return;}const choice=chooseBudgetMeal(options);selected=choice.dish;selectedDrawNote={id:selected.id,note:choice.note,key:choice.key};lastDrawId=selected.id;history.unshift({id:selected.id,name:selected.name,price:selected.price});history=history.slice(0,5);save();render();$('draw-announcement').textContent='抽到 '+selected.name+'，預估 '+selected.price+' 元。';$('result-panel').classList.remove('flash');void $('result-panel').offsetWidth;$('result-panel').classList.add('flash');}
+  $('draw-mode').addEventListener('change',()=>{resetDrawPolicy();render();});
   $('draw').addEventListener('click',drawMeal);
-  $('clear-history').addEventListener('click',()=>{history=[];lastDrawId=null;save();render();$('draw-announcement').textContent='已清除抽選紀錄，菜單與最愛保留。';($('draw').disabled?$('reset-filters'):$('draw')).focus();});
+  $('clear-history').addEventListener('click',()=>{history=[];lastDrawId=null;resetDrawPolicy();selectedDrawNote=null;save();render();$('draw-announcement').textContent='已清除抽選紀錄，菜單與最愛保留。';($('draw').disabled?$('reset-filters'):$('draw')).focus();});
   $('result-favorite').addEventListener('click',()=>{if(selected)toggleFavorite(selected.id,'result');});
   $('clear-comparison').addEventListener('click',()=>{comparisonIds=[];comparisonMessage='已清空比較，可重新加入最多 3 道餐點。';render();$('comparison-title').focus();});
   $('mobile-draw').addEventListener('click',()=>{drawMeal();$('result-panel').scrollIntoView({behavior:'smooth',block:'start'});});
