@@ -1,47 +1,71 @@
 {
-  "performed_at": "2026-11-18T18:16:12.286214+00:00",
+  "performed_at": "2026-11-19T03:13:46.021741+00:00",
   "local_review_date": "2026-11-19 Asia/Taipei",
-  "scope": "Bounded independent static code/spec/report content review of the current photographic redesign and both final DOCX reports. Read current recorded browser evidence for consistency only; no browser, rendering, new interaction test or course grading performed by this reviewer.",
-  "verdict": "PASS - no unresolved blocking finding within the reviewed scope",
+  "report_revision": 2,
+  "scope": "Bounded independent static code/spec/course-mapping and bilingual report content review, report revision 2. Read dated functional and UX records for content consistency only. No browser rerun, interaction test, rendering, visual-layout QA or course grading was performed by this reviewer.",
+  "supersedes_previous_review": true,
+  "superseded_review": {
+    "performed_at": "2026-11-18T18:16:12.286214+00:00",
+    "report_revision": 1,
+    "related_report_sha256": {
+      "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/DOC_HIEU_TIENG_VIET/P16157038_HW11_NOP_LAI_HW5_BAN_DICH_TIENG_VIET_LUXURY.docx": "d417bdebce34e0716d0747edb42106622887d7b536184d73e06948d6b22b6722",
+      "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/成大_P16157038_系統碩一_陳世豐_補交第五週作業_今天吃什麼_整體改版_正式報告.docx": "6d2b2c3555642fa8a3f99fc477369197bd4a21a7f4919c5e20811745edd7f49a"
+    }
+  },
+  "verdict": "PASS - no unresolved blocking content finding within the bounded review scope",
   "blocking_issues": 0,
   "findings": [
-    "Previous B1FC25F2 source review is superseded by this current-hash review.",
-    "Five type-photo entries change only category; the vegetarian photo entry toggles vegetarian. UI introduction, SPEC and Chinese/Vietnamese report now state this distinction accurately.",
-    "Controls match report: budget, vegetarian and favorites are directly visible; type/price band/spice are in more preferences; search is above the menu.",
-    "Original HW5 week/date and HW11 resubmission identity and student author are correct in both reports; each contains seven embedded images and no private submission guide or duplicated long paragraph.",
-    "Forty initial dishes, twelve categories and brand totals are preserved. Sample array and storage/migration block remain identical to the original baseline.",
-    "Recovery example 1500 plus luxury yields zero; removing band yields 35; explicit 2200 budget yields one. Comparison at 1500 for 200/1100/2700 yields 1300/400 remaining and 1200 excess.",
-    "Four generated illustrative food assets and local font provenance are disclosed; images are not represented as restaurant photographs. Runtime uses static filtering/calculation/random selection without a live model API.",
-    "Current recorded local/public functional 30/30 and local/public UX 13/13 results match the reviewed HTML and CSS hashes. These records were read, not independently re-executed."
+    "Revision 2 explains original limitations, upgrade objectives, new functions and evidence in causal order. Both reports distinguish preserved original 40-dish/brand/high-price/favorite/history features from newly added recovery, reasons, three-item comparison and redesigned interaction.",
+    "HW8 Reflection is explicitly a development-method reference tied to the documented first mobile measurements and revision, not a runtime reflection agent or a claim to implement the original HW8 application.",
+    "HW9 mapping is backed by the actual newly introduced AGENTS/SPEC rules and recoveryOptions(), applyRecovery(), renderComparison(): one-field recovery, explicit budget change, retained vegetarian preference, at-most-three comparisons and storage preservation.",
+    "HW10 mapping is restricted to early checks, local repair/retest and public verification. Dated tests and hashes support this development workflow; no LLM Wiki, RAG or chatbot integration is claimed.",
+    "Chinese and Vietnamese texts consistently state that results derive from the current editable menu and current conditions, with 40 initial dishes and support for user additions/edits.",
+    "Photo-type entries and the vegetarian-photo entry are distinguished accurately in UI/SPEC/reports. Current AGENTS correctly separates HTML/JavaScript from editorial.css.",
+    "Both reports retain the correct student author and HW11 1117 resubmission of HW5 1006, seven embedded images, formal teacher-facing voice and no private LMS submission guide or duplicated long paragraphs.",
+    "Recovery counts and comparison arithmetic remain consistent: 1500 plus luxury gives 0, removing price band gives 35, explicit 2200 cap gives 1; at 1500, prices 200/1100/2700 leave 1300/400 or exceed by 1200.",
+    "Four illustrative generated image assets and local font provenance are disclosed without implying actual restaurant photography or runtime model calls. No user satisfaction, timing benefit or grade is invented.",
+    "Current recorded local/public functional 30/30 and local/public UX 13/13 results correspond to the unchanged reviewed HTML/CSS. Their execution was not independently rerun for this report-only revision."
   ],
+  "course_source_checks": {
+    "HW5": "Teacher lecture physical pages 68-76 and 85: discuss needs/specification, index.html, GitHub Pages.",
+    "HW8": "Teacher lecture physical pages 19-21: Reflection draft/evaluate/revise; report qualifies its use as a development reference.",
+    "HW9": "Teacher lecture physical pages 18,22,24: concrete deliverables, limits, acceptance and persistent project rules.",
+    "HW10": "Teacher lecture physical pages 14,21-26,45-47: executable checks, loop limits, local failure routing and step-level reruns."
+  },
   "artifact_sha256": {
     "index.html": "576ad3bce6e2fd9fd0ec9263d3fb58a13b680fd99cec358425fdb0bc0fa9b2aa",
-    "editorial.css": "9c477c9a68e404b12a8746f8ab3fe21a31c114b89778e33517fea053a81f7854"
+    "editorial.css": "9c477c9a68e404b12a8746f8ab3fe21a31c114b89778e33517fea053a81f7854",
+    "AGENTS.md": "b2adcbf085efb74641c9e2514b28475f2c7283cc10e3eb76ffc74746436e73a2",
+    "SPEC.md": "09f8b87d6aff623e1fadc4400c6c7bcd51e7c787da8ced74504a3c6c9c30dd81",
+    "COURSE-INTEGRATION.md": "82df68273c47cf2ec150beaa484a4439934bd8cfec2a35f98306511c10ffbfca"
   },
   "related_artifact_sha256": {
-    "work/hw11_1117/build_luxury_delivery.py": "aa2516c5ae6e7e8d9daa046dbe25a40bf3a236bbca3b1a9aca57d06bdac45a0c",
-    "outputs/HW11_1117_RESUBMIT_HW5/today-menu/SPEC.md": "09f8b87d6aff623e1fadc4400c6c7bcd51e7c787da8ced74504a3c6c9c30dd81",
-    "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/DOC_HIEU_TIENG_VIET/P16157038_HW11_NOP_LAI_HW5_BAN_DICH_TIENG_VIET_LUXURY.docx": "d417bdebce34e0716d0747edb42106622887d7b536184d73e06948d6b22b6722",
-    "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/成大_P16157038_系統碩一_陳世豐_補交第五週作業_今天吃什麼_整體改版_正式報告.docx": "6d2b2c3555642fa8a3f99fc477369197bd4a21a7f4919c5e20811745edd7f49a"
+    "work/hw11_1117/build_luxury_delivery.py": "2fb9051420dd85a0951eb3117fcb98118a60d5d9ae527e2da8054d48c7420d54",
+    "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/DOC_HIEU_TIENG_VIET/P16157038_HW11_NOP_LAI_HW5_BAN_DICH_TIENG_VIET_LUXURY.docx": "14c1ca0d3331faa1607e8ff31ca353b7e4e0981891fd52481ad23e49d377e095",
+    "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/成大_P16157038_系統碩一_陳世豐_補交第五週作業_今天吃什麼_整體改版_正式報告.docx": "308560a43b2a33c426e3e506d7b9a277e4f3bc70acf74c663e51caf07f646b0e"
   },
   "reports": [
     {
       "path": "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/DOC_HIEU_TIENG_VIET/P16157038_HW11_NOP_LAI_HW5_BAN_DICH_TIENG_VIET_LUXURY.docx",
-      "sha256": "d417bdebce34e0716d0747edb42106622887d7b536184d73e06948d6b22b6722",
+      "sha256": "14c1ca0d3331faa1607e8ff31ca353b7e4e0981891fd52481ad23e49d377e095",
       "author": "陳世豐",
       "embedded_images": 7,
-      "clarification_present": true,
-      "duplicate_long_paragraphs": 0,
-      "private_submission_instructions_in_formal_report": false
+      "causal_motivation_and_old_new_distinction": true,
+      "course_mapping_development_scope_qualified": true,
+      "current_menu_initial_40_precision_present": true,
+      "private_submission_instructions_in_formal_report": false,
+      "duplicate_long_paragraphs": 0
     },
     {
       "path": "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/成大_P16157038_系統碩一_陳世豐_補交第五週作業_今天吃什麼_整體改版_正式報告.docx",
-      "sha256": "6d2b2c3555642fa8a3f99fc477369197bd4a21a7f4919c5e20811745edd7f49a",
+      "sha256": "308560a43b2a33c426e3e506d7b9a277e4f3bc70acf74c663e51caf07f646b0e",
       "author": "陳世豐",
       "embedded_images": 7,
-      "clarification_present": true,
-      "duplicate_long_paragraphs": 0,
-      "private_submission_instructions_in_formal_report": false
+      "causal_motivation_and_old_new_distinction": true,
+      "course_mapping_development_scope_qualified": true,
+      "current_menu_initial_40_precision_present": true,
+      "private_submission_instructions_in_formal_report": false,
+      "duplicate_long_paragraphs": 0
     }
   ],
   "recorded_evidence_consistency": [
@@ -53,7 +77,7 @@
         "passed": 30,
         "failed": 0
       },
-      "current_source_hashes_match": true
+      "current_html_css_hashes_match": true
     },
     {
       "file": "browser-public.json",
@@ -63,7 +87,7 @@
         "passed": 30,
         "failed": 0
       },
-      "current_source_hashes_match": true
+      "current_html_css_hashes_match": true
     },
     {
       "file": "ux-local.json",
@@ -73,7 +97,7 @@
         "passed": 13,
         "failed": 0
       },
-      "current_source_hashes_match": true
+      "current_html_css_hashes_match": true
     },
     {
       "file": "ux-public.json",
@@ -83,7 +107,7 @@
         "passed": 13,
         "failed": 0
       },
-      "current_source_hashes_match": true
+      "current_html_css_hashes_match": true
     }
   ],
   "original_HW5_LMS_full_rubric_available": false,

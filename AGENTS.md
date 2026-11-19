@@ -4,7 +4,7 @@
 
 第五週Vibe Coding作品，於第十一週補交改善。使用者依預算與偏好篩選、比較、隨機抽選可編輯菜單。AI協助開發，網站不執行模型、不需API金鑰。
 
-`index.html`包含HTML、CSS與JavaScript，可雙擊或用靜態伺服器開啟。`SPEC.md`是行為與驗收規格；修改前先讀。`tests/`保存Node測試，`evidence/`保存實際版本與結果。`README.md`寫使用方式，`CHANGELOG.md`按日期記錄修改。不導入框架、伺服器、執行時外部字型請求、追蹤服務或API。字型隨專案附上授權。assets保存隨專案攜帶的示意圖；價格與素食標記不以圖像推斷。
+`index.html`保存HTML與JavaScript，`editorial.css`保存樣式；保留整個資料夾，可雙擊HTML或用靜態伺服器開啟。`SPEC.md`是行為與驗收規格；修改前先讀。`tests/`保存Node測試，`evidence/`保存實際版本與結果。`README.md`寫使用方式，`CHANGELOG.md`按日期記錄修改。不導入框架、伺服器、執行時外部字型請求、追蹤服務或API。字型隨專案附上授權。assets保存隨專案攜帶的示意圖；價格與素食標記不以圖像推斷。
 
 ## 視覺與資料
 
