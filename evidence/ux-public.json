@@ -1,12 +1,12 @@
 {
-  "performed_at": "2026-11-18T18:14:39.291Z",
+  "performed_at": "2026-11-19T04:19:41.799Z",
   "stage": "public",
   "target": "https://p16157038-max.github.io/today-menu-hw5/",
   "artifact_sha256": {
-    "index.html": "576ad3bce6e2fd9fd0ec9263d3fb58a13b680fd99cec358425fdb0bc0fa9b2aa",
-    "editorial.css": "9c477c9a68e404b12a8746f8ab3fe21a31c114b89778e33517fea053a81f7854",
+    "index.html": "f56f344f3a1e261dfc7498399f54eb8c45076c3ebfce12d8bf4fb68a916658b5",
+    "editorial.css": "8aefb887b7c403c8a46f506f8c016aa4b4ed9e4ca2c3dd498e1567285a3914e0",
     "assets/restaurant-hero.jpg": "3113f3cde72a15787db809d071fe46f4cfbecb80adebec32368cb77b42e19ebd",
-    "assets/fonts/noto-serif-tc.ttf": "b95916dd800dbd8729241903e541c9e9a4f3a31d1b20e4d4c209b6b62caa69fa",
+    "assets/fonts/noto-serif-tc.ttf": "6fe017f1890d38914c0123c159525ea07aabfb2e151bb8038f2be42a055771ee",
     "assets/fonts/cormorant-garamond.ttf": "fc3858dfc491f19e921d2a8b073c458fb5afa36d9e3cd959255326184449c7c7",
     "assets/dining-editorial.jpg": "63f03c96583e5aaaad7ebc291e46471d402ffb959acf3b95bea8ab56e9b2f3b9",
     "assets/vegetarian-editorial.jpg": "a97cbad1c4a4c68cc0615f897082e4513a96674eb03fb458f379ea165d3479e0",
@@ -36,7 +36,7 @@
           "幫我選一餐"
         ],
         "action_count": 2,
-        "reason": "這道為什麼符合？\n每人預估 NT$ 100，在最高預算 NT$ 100 內，剩餘額度 NT$ 0。"
+        "reason": "這道為什麼符合？\n每人預估 NT$ 80，在最高預算 NT$ 100 內，剩餘額度 NT$ 20。"
       }
     },
     {

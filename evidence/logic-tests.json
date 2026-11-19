@@ -1,12 +1,12 @@
 {
-  "performed_at": "2026-11-18T18:12:59.417370+00:00",
+  "performed_at": "2026-11-19T04:19:21.739586+00:00",
   "command": "node tests/hw11-regression.cjs",
   "exit_code": 0,
-  "passed_groups": 21,
+  "passed_groups": 30,
   "filter_states_in_recovery_matrix": 240,
   "artifact_sha256": {
-    "index.html": "576ad3bce6e2fd9fd0ec9263d3fb58a13b680fd99cec358425fdb0bc0fa9b2aa",
-    "editorial.css": "9c477c9a68e404b12a8746f8ab3fe21a31c114b89778e33517fea053a81f7854"
+    "index.html": "f56f344f3a1e261dfc7498399f54eb8c45076c3ebfce12d8bf4fb68a916658b5",
+    "editorial.css": "8aefb887b7c403c8a46f506f8c016aa4b4ed9e4ca2c3dd498e1567285a3914e0"
   },
   "model_API_calls": 0,
   "preservation": {
@@ -15,6 +15,6 @@
     "catalog_revision": 4,
     "storage_key_preserved": true,
     "baseline_html_sha256": "4a03cc09d837cec78b91c5d96906dc8d95a6f26bfcb925ac31e4571a7a73154d",
-    "current_html_sha256": "576ad3bce6e2fd9fd0ec9263d3fb58a13b680fd99cec358425fdb0bc0fa9b2aa"
+    "current_html_sha256": "f56f344f3a1e261dfc7498399f54eb8c45076c3ebfce12d8bf4fb68a916658b5"
   }
 }

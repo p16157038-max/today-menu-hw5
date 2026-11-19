@@ -19,5 +19,14 @@ PASS comparison keeps three unique entries, rejects the fourth and preserves dra
 PASS comparison persists through filters and explains budget, diet and other exclusions accurately
 PASS comparison reflects edits and removes deleted meals without restoring stale entries
 PASS comparison removal, clearing and reload are accessible and do not change saved menu state
+PASS budget preference switches above 300 and keeps exact 200, 300 and 301 price boundaries
+PASS real forty-dish menu gives four preferred and one cheaper result per stable round at 800, 1500 and 3000
+PASS a thousand real-menu vegetarian draws preserve diet and budget without five cheap results in a row
+PASS uniform mode and an unlimited budget keep every eligible real meal reachable without persisting preference state
+PASS a missing target band explains the actual highest-price fallback and preserves dietary eligibility
+PASS repeat avoidance outranks the preferred singleton and empty, sole and all-preferred pools remain usable
+PASS changing settings away and back, editing catalog or favorites, and clearing history restart a partial quota round
+PASS sorting, comparison and pagination preserve the exact seeded draw sequence of a partially consumed round
+PASS the last result never presents a stale preference note after mode, price, favorite or budget changes
 
-21 tests passed. No network, model, browser or external dependencies used.
+30 tests passed. No network, model, browser or external dependencies used.

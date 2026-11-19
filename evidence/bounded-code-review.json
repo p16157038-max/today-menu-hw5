@@ -1,118 +1,200 @@
 {
-  "performed_at": "2026-11-19T03:13:46.021741+00:00",
+  "performed_at": "2026-11-19T04:23:40+00:00",
+  "timestamp_source": "clock.curr_time UTC",
   "local_review_date": "2026-11-19 Asia/Taipei",
-  "report_revision": 2,
-  "scope": "Bounded independent static code/spec/course-mapping and bilingual report content review, report revision 2. Read dated functional and UX records for content consistency only. No browser rerun, interaction test, rendering, visual-layout QA or course grading was performed by this reviewer.",
+  "report_revision": 3,
+  "scope": "Bounded static review of the new budget-priority implementation, CSS controls, AGENTS/SPEC/COURSE-INTEGRATION, regression source, report builder and final bilingual DOCX content. The reviewer did not implement the new priority core. Saved executable/browser records were checked for consistency with actual file hashes, not independently rerun. No browser operation, rendering, visual-layout QA or course grading was performed.",
   "supersedes_previous_review": true,
   "superseded_review": {
-    "performed_at": "2026-11-18T18:16:12.286214+00:00",
-    "report_revision": 1,
+    "performed_at": "2026-11-19T03:13:46.021741+00:00",
+    "report_revision": 2,
+    "review_file_sha256": "c823733fda743e3c1dae9da99cdd21064a0af339fc5e990998f062961d8f226f",
     "related_report_sha256": {
-      "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/DOC_HIEU_TIENG_VIET/P16157038_HW11_NOP_LAI_HW5_BAN_DICH_TIENG_VIET_LUXURY.docx": "d417bdebce34e0716d0747edb42106622887d7b536184d73e06948d6b22b6722",
-      "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/成大_P16157038_系統碩一_陳世豐_補交第五週作業_今天吃什麼_整體改版_正式報告.docx": "6d2b2c3555642fa8a3f99fc477369197bd4a21a7f4919c5e20811745edd7f49a"
+      "work/hw11_1117/build_luxury_delivery.py": "2fb9051420dd85a0951eb3117fcb98118a60d5d9ae527e2da8054d48c7420d54",
+      "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/DOC_HIEU_TIENG_VIET/P16157038_HW11_NOP_LAI_HW5_BAN_DICH_TIENG_VIET_LUXURY.docx": "14c1ca0d3331faa1607e8ff31ca353b7e4e0981891fd52481ad23e49d377e095",
+      "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/成大_P16157038_系統碩一_陳世豐_補交第五週作業_今天吃什麼_整體改版_正式報告.docx": "308560a43b2a33c426e3e506d7b9a277e4f3bc70acf74c663e51caf07f646b0e"
     }
   },
-  "verdict": "PASS - no unresolved blocking content finding within the bounded review scope",
+  "verdict": "PASS - no unresolved blocking code or report-content finding within the bounded review scope",
   "blocking_issues": 0,
+  "unresolved_findings": [],
   "findings": [
-    "Revision 2 explains original limitations, upgrade objectives, new functions and evidence in causal order. Both reports distinguish preserved original 40-dish/brand/high-price/favorite/history features from newly added recovery, reasons, three-item comparison and redesigned interaction.",
-    "HW8 Reflection is explicitly a development-method reference tied to the documented first mobile measurements and revision, not a runtime reflection agent or a claim to implement the original HW8 application.",
-    "HW9 mapping is backed by the actual newly introduced AGENTS/SPEC rules and recoveryOptions(), applyRecovery(), renderComparison(): one-field recovery, explicit budget change, retained vegetarian preference, at-most-three comparisons and storage preservation.",
-    "HW10 mapping is restricted to early checks, local repair/retest and public verification. Dated tests and hashes support this development workflow; no LLM Wiki, RAG or chatbot integration is claimed.",
-    "Chinese and Vietnamese texts consistently state that results derive from the current editable menu and current conditions, with 40 initial dishes and support for user additions/edits.",
-    "Photo-type entries and the vegetarian-photo entry are distinguished accurately in UI/SPEC/reports. Current AGENTS correctly separates HTML/JavaScript from editorial.css.",
-    "Both reports retain the correct student author and HW11 1117 resubmission of HW5 1006, seven embedded images, formal teacher-facing voice and no private LMS submission guide or duplicated long paragraphs.",
-    "Recovery counts and comparison arithmetic remain consistent: 1500 plus luxury gives 0, removing price band gives 35, explicit 2200 cap gives 1; at 1500, prices 200/1100/2700 leave 1300/400 or exceed by 1200.",
-    "Four illustrative generated image assets and local font provenance are disclosed without implying actual restaurant photography or runtime model calls. No user satisfaction, timing benefit or grade is invented.",
-    "Current recorded local/public functional 30/30 and local/public UX 13/13 results correspond to the unchanged reviewed HTML/CSS. Their execution was not independently rerun for this report-only revision."
+    "Default near-budget mode applies only above 300; the target lower bound is ceil(0.7 * cap), the upper cap remains inclusive. Invalid budgets cannot silently become unlimited. Blank, <=300 and explicit uniform mode select uniformly from the effective eligible pool.",
+    "The actual filtered pool and no-repeat rule are applied before grouping. With both groups available, a Fisher-Yates shuffled five-slot bag supplies exactly four preferred and one cheaper slot per completed stable-band cycle; the meal is chosen uniformly within its current group. Reports and SPEC qualify the quota and do not claim every sliding five draws has the ratio.",
+    "When no target-band meal remains, the fallback is ceil(0.8 * actual maximum eligible price) through that maximum. The UI identifies the missing target range and actual replacement band. One-group, sole-meal, empty-pool and no-repeat conditions do not force unavailable quota slots or relax dietary/budget constraints.",
+    "The configuration key includes filters, mode, avoid-repeat, dishes and sorted favorites. Rendering resets the quota on actual configuration transitions, including away-and-back changes; presentation sorting, pagination and comparison are excluded. Clearing history explicitly resets the bag. The result policy note is tied to its dish and exact draw configuration, while current-policy summary is recomputed separately.",
+    "Sorting uses copied arrays and does not mutate the source catalog. Storage keeps its original key, version, catalog revision, dishes/favorites/history fields and migration path; preference/cycle state is session-only. No runtime model, SQL or network service was introduced by this change.",
+    "Regression source contains the original behavior coverage plus nine budget groups, including 200/300/301 boundaries, 800/1500/3000 quotas, fallback/diet, uniform/unlimited reachability, no-repeat, reset and presentation invariance, and stale-note handling. Saved final logic evidence records 30 passing groups and 240 recovery states.",
+    "All saved local/public functional records report 30/30, interface records 13/13 and budget journeys 7/7 with zero failures; their HTML/CSS and other recorded asset hashes match the files reviewed. These executions were not rerun by this reviewer.",
+    "The saved public budget-3000 journey uses seed 73461 and prices [2300,2700,2900,65,2700], exactly matching both reports. Four outcomes lie in 2100-3000; the single lower-price slot is intentionally disclosed.",
+    "The final TC and VI reports integrate budget intent into the original-problem explanation and concluding outcome statement. They preserve the original/new feature distinction, correct student identity, HW11 1117 resubmission of HW5 1006, and formal teacher-facing content.",
+    "Each final DOCX has eight embedded screenshots matching all eight final PNGs, including the new budget-priority image. Root reports eight rendered pages for each document; this reviewer checked embedded content and source identity only, not page layout.",
+    "Recovery values 0/35/1 and comparison arithmetic 1300/400/excess1200 remain consistent. Four generated images are illustrative, accessibility claims are limited to selected controls and nine color pairs, and no human timing/satisfaction, whole-site accessibility certification or grade is invented.",
+    "Course mapping remains confined to actual development/maintenance practices: HW8 revision reference, HW9 persistent rules, HW10 early checks/local repair/public retest. It does not claim runtime reflection, LLM Wiki, RAG or chatbot behavior."
   ],
-  "course_source_checks": {
+  "artifact_sha256": {
+    "index.html": "f56f344f3a1e261dfc7498399f54eb8c45076c3ebfce12d8bf4fb68a916658b5",
+    "editorial.css": "8aefb887b7c403c8a46f506f8c016aa4b4ed9e4ca2c3dd498e1567285a3914e0",
+    "AGENTS.md": "71bab2a74bb7c23ddd066728ea7a46c030ec3aa2931dff35217f819d46599fc2",
+    "SPEC.md": "4ebe618fc8766146f718d5d7a1743450c308d020be0b89898e404cd1bf26a628",
+    "COURSE-INTEGRATION.md": "8ffb4dea4223207a36f15c90486af8ef17d5630e0614452470f4c789e921b30f",
+    "tests/hw11-regression.cjs": "5bee1fd935fb219d11f3d4f7b206d9fda25f5a9e129f63da5e60400d0e245e09"
+  },
+  "related_artifact_sha256": {
+    "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/DOC_HIEU_TIENG_VIET/P16157038_HW11_NOP_LAI_HW5_BAN_DICH_TIENG_VIET_LUXURY.docx": "dae791821b4622145aca09654bb610d4ce5f8def61079c158f5bc65bebbc652f",
+    "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/成大_P16157038_系統碩一_陳世豐_補交第五週作業_今天吃什麼_整體改版_正式報告.docx": "ba21c6a6798dbed2f4ab015e8d83f49dadde61682b56e2872bfb9d7eee7a1de3",
+    "work/hw11_1117/build_luxury_delivery.py": "2f6d044f076c3aa2297b8c51ea541bb4b87dab10b9a301257d42b7d8bb8e3dea"
+  },
+  "reports": [
+    {
+      "path": "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/DOC_HIEU_TIENG_VIET/P16157038_HW11_NOP_LAI_HW5_BAN_DICH_TIENG_VIET_LUXURY.docx",
+      "sha256": "dae791821b4622145aca09654bb610d4ce5f8def61079c158f5bc65bebbc652f",
+      "author": "陳世豐",
+      "embedded_images": 8,
+      "all_eight_embedded_images_match_final_screenshot_files": true,
+      "priority_policy_and_exact_seeded_public_example_present": true,
+      "qualified_complete_cycle_quota_and_fallback_present": true,
+      "final_budget_motivation_and_outcome_coherence_present": true,
+      "causal_motivation_and_old_new_distinction": true,
+      "course_mapping_development_scope_qualified": true,
+      "current_menu_initial_40_precision_present": true,
+      "private_submission_instructions_in_formal_report": false,
+      "duplicate_long_paragraphs": 0,
+      "page_count_reported_by_root": 8,
+      "page_count_or_layout_independently_verified": false
+    },
+    {
+      "path": "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/成大_P16157038_系統碩一_陳世豐_補交第五週作業_今天吃什麼_整體改版_正式報告.docx",
+      "sha256": "ba21c6a6798dbed2f4ab015e8d83f49dadde61682b56e2872bfb9d7eee7a1de3",
+      "author": "陳世豐",
+      "embedded_images": 8,
+      "all_eight_embedded_images_match_final_screenshot_files": true,
+      "priority_policy_and_exact_seeded_public_example_present": true,
+      "qualified_complete_cycle_quota_and_fallback_present": true,
+      "final_budget_motivation_and_outcome_coherence_present": true,
+      "causal_motivation_and_old_new_distinction": true,
+      "course_mapping_development_scope_qualified": true,
+      "current_menu_initial_40_precision_present": true,
+      "private_submission_instructions_in_formal_report": false,
+      "duplicate_long_paragraphs": 0,
+      "page_count_reported_by_root": 8,
+      "page_count_or_layout_independently_verified": false
+    }
+  ],
+  "recorded_evidence_consistency": [
+    {
+      "file": "logic-tests.json",
+      "performed_at": "2026-11-19T04:19:21.739586+00:00",
+      "summary": {
+        "passed_groups": 30,
+        "filter_states": 240,
+        "exit_code": 0
+      },
+      "current_html_css_hashes_match": true,
+      "all_recorded_asset_hashes_match": true,
+      "execution_independently_rerun": false
+    },
+    {
+      "file": "browser-local.json",
+      "performed_at": "2026-11-19T04:14:21.742Z",
+      "summary": {
+        "total": 30,
+        "passed": 30,
+        "failed": 0
+      },
+      "current_html_css_hashes_match": true,
+      "all_recorded_asset_hashes_match": true,
+      "execution_independently_rerun": false
+    },
+    {
+      "file": "browser-public.json",
+      "performed_at": "2026-11-19T04:19:30.091Z",
+      "summary": {
+        "total": 30,
+        "passed": 30,
+        "failed": 0
+      },
+      "current_html_css_hashes_match": true,
+      "all_recorded_asset_hashes_match": true,
+      "execution_independently_rerun": false
+    },
+    {
+      "file": "ux-local.json",
+      "performed_at": "2026-11-19T04:14:28.409Z",
+      "summary": {
+        "total": 13,
+        "passed": 13,
+        "failed": 0
+      },
+      "current_html_css_hashes_match": true,
+      "all_recorded_asset_hashes_match": true,
+      "execution_independently_rerun": false
+    },
+    {
+      "file": "ux-public.json",
+      "performed_at": "2026-11-19T04:19:41.799Z",
+      "summary": {
+        "total": 13,
+        "passed": 13,
+        "failed": 0
+      },
+      "current_html_css_hashes_match": true,
+      "all_recorded_asset_hashes_match": true,
+      "execution_independently_rerun": false
+    },
+    {
+      "file": "budget-priority-local.json",
+      "performed_at": "2026-11-19T04:14:22.640Z",
+      "summary": {
+        "total": 7,
+        "passed": 7,
+        "failed": 0
+      },
+      "current_html_css_hashes_match": true,
+      "all_recorded_asset_hashes_match": true,
+      "execution_independently_rerun": false
+    },
+    {
+      "file": "budget-priority-public.json",
+      "performed_at": "2026-11-19T04:19:32.633Z",
+      "summary": {
+        "total": 7,
+        "passed": 7,
+        "failed": 0
+      },
+      "current_html_css_hashes_match": true,
+      "all_recorded_asset_hashes_match": true,
+      "execution_independently_rerun": false
+    }
+  ],
+  "public_priority_example": {
+    "random_seed": 73461,
+    "budget": 3000,
+    "preferred_range": [
+      2100,
+      3000
+    ],
+    "prices": [
+      2300,
+      2700,
+      2900,
+      65,
+      2700
+    ],
+    "preferred_count": 4,
+    "cheaper_count": 1
+  },
+  "prior_review_course_source_checks": {
     "HW5": "Teacher lecture physical pages 68-76 and 85: discuss needs/specification, index.html, GitHub Pages.",
     "HW8": "Teacher lecture physical pages 19-21: Reflection draft/evaluate/revise; report qualifies its use as a development reference.",
     "HW9": "Teacher lecture physical pages 18,22,24: concrete deliverables, limits, acceptance and persistent project rules.",
     "HW10": "Teacher lecture physical pages 14,21-26,45-47: executable checks, loop limits, local failure routing and step-level reruns."
   },
-  "artifact_sha256": {
-    "index.html": "576ad3bce6e2fd9fd0ec9263d3fb58a13b680fd99cec358425fdb0bc0fa9b2aa",
-    "editorial.css": "9c477c9a68e404b12a8746f8ab3fe21a31c114b89778e33517fea053a81f7854",
-    "AGENTS.md": "b2adcbf085efb74641c9e2514b28475f2c7283cc10e3eb76ffc74746436e73a2",
-    "SPEC.md": "09f8b87d6aff623e1fadc4400c6c7bcd51e7c787da8ced74504a3c6c9c30dd81",
-    "COURSE-INTEGRATION.md": "82df68273c47cf2ec150beaa484a4439934bd8cfec2a35f98306511c10ffbfca"
-  },
-  "related_artifact_sha256": {
-    "work/hw11_1117/build_luxury_delivery.py": "2fb9051420dd85a0951eb3117fcb98118a60d5d9ae527e2da8054d48c7420d54",
-    "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/DOC_HIEU_TIENG_VIET/P16157038_HW11_NOP_LAI_HW5_BAN_DICH_TIENG_VIET_LUXURY.docx": "14c1ca0d3331faa1607e8ff31ca353b7e4e0981891fd52481ad23e49d377e095",
-    "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/成大_P16157038_系統碩一_陳世豐_補交第五週作業_今天吃什麼_整體改版_正式報告.docx": "308560a43b2a33c426e3e506d7b9a277e4f3bc70acf74c663e51caf07f646b0e"
-  },
-  "reports": [
-    {
-      "path": "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/DOC_HIEU_TIENG_VIET/P16157038_HW11_NOP_LAI_HW5_BAN_DICH_TIENG_VIET_LUXURY.docx",
-      "sha256": "14c1ca0d3331faa1607e8ff31ca353b7e4e0981891fd52481ad23e49d377e095",
-      "author": "陳世豐",
-      "embedded_images": 7,
-      "causal_motivation_and_old_new_distinction": true,
-      "course_mapping_development_scope_qualified": true,
-      "current_menu_initial_40_precision_present": true,
-      "private_submission_instructions_in_formal_report": false,
-      "duplicate_long_paragraphs": 0
-    },
-    {
-      "path": "outputs/HW11_1117_RESUBMIT_HW5/DELIVERY_LUXURY/成大_P16157038_系統碩一_陳世豐_補交第五週作業_今天吃什麼_整體改版_正式報告.docx",
-      "sha256": "308560a43b2a33c426e3e506d7b9a277e4f3bc70acf74c663e51caf07f646b0e",
-      "author": "陳世豐",
-      "embedded_images": 7,
-      "causal_motivation_and_old_new_distinction": true,
-      "course_mapping_development_scope_qualified": true,
-      "current_menu_initial_40_precision_present": true,
-      "private_submission_instructions_in_formal_report": false,
-      "duplicate_long_paragraphs": 0
-    }
-  ],
-  "recorded_evidence_consistency": [
-    {
-      "file": "browser-local.json",
-      "performed_at": "2026-11-18T18:13:06.722Z",
-      "summary": {
-        "total": 30,
-        "passed": 30,
-        "failed": 0
-      },
-      "current_html_css_hashes_match": true
-    },
-    {
-      "file": "browser-public.json",
-      "performed_at": "2026-11-18T18:14:29.269Z",
-      "summary": {
-        "total": 30,
-        "passed": 30,
-        "failed": 0
-      },
-      "current_html_css_hashes_match": true
-    },
-    {
-      "file": "ux-local.json",
-      "performed_at": "2026-11-18T18:13:12.916Z",
-      "summary": {
-        "total": 13,
-        "passed": 13,
-        "failed": 0
-      },
-      "current_html_css_hashes_match": true
-    },
-    {
-      "file": "ux-public.json",
-      "performed_at": "2026-11-18T18:14:39.291Z",
-      "summary": {
-        "total": 13,
-        "passed": 13,
-        "failed": 0
-      },
-      "current_html_css_hashes_match": true
-    }
-  ],
+  "course_source_note": "Lecture page references retained from the earlier source review; original lecture PDFs were not reopened during this bounded revision-3 pass.",
   "original_HW5_LMS_full_rubric_available": false,
   "grade_claimed": false,
   "browser_tests_run_by_this_reviewer": false,
   "render_or_visual_QA_run_by_this_reviewer": false,
-  "application_files_modified_by_this_reviewer": false
+  "application_files_modified_by_this_reviewer": false,
+  "reports_modified_by_this_reviewer": false
 }
